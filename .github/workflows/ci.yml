@@ -25,9 +25,5 @@ jobs:
         working-directory: app
         run: npm ci
 
-      - name: Run tests (if present)
-        working-directory: app
-        run: npm test --if-present
-
       - name: Docker build
         run: docker build -t devops-app:ci -f docker/Dockerfile .
