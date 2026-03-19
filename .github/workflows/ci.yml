@@ -27,6 +27,19 @@ jobs:
       - name: Docker build
         run: docker build -t devops-app:ci -f docker/Dockerfile .
 
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build image for registry
+        run: docker build -t ghcr.io/${{ github.repository }}:latest -f docker/Dockerfile .
+
+      - name: Push image to GHCR
+        run: docker push ghcr.io/${{ github.repository }}:latest
+
   deploy-to-kind:
     runs-on: ubuntu-latest
     needs: build-and-test
