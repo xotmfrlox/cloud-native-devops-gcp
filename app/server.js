@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 // health: "살아있냐?" (liveness)
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'ok' });
+  res.status(200).json({ status: 'ok v1' });
 });
 
 // ready: "트래픽 받아도 되냐?" (readiness)
