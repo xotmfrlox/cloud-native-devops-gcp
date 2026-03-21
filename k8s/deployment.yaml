@@ -12,15 +12,23 @@ spec:
       labels:
         app: devops-app
     spec:
-containers:
-  - name: app
-    image: ghcr.io/xotmfrlox/cloud-native-devops-gcp:latest
-    imagePullPolicy: Always
-    ports:
-      - containerPort: 3000
-    livenessProbe:
-      httpGet:
-        path: /health
-        port: 3000
-      initialDelaySeconds: 10
-      periodSeconds: 10
+      containers:
+        - name: app
+          image: ghcr.io/xotmfrlox/cloud-native-devops-gcp:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3000
+            initialDelaySeconds: 20
+            periodSeconds: 5
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 10
