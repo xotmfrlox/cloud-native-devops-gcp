@@ -1,3 +1,4 @@
+cat > .github/workflows/deploy.yml <<'EOF'
 name: CD
 
 on:
@@ -8,7 +9,12 @@ on:
 
 jobs:
   deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
 
     steps:
       - name: Checkout
@@ -28,8 +34,38 @@ jobs:
       - name: Create kind cluster
         run: |
           kind create cluster --name devops
+          kubectl get nodes
+
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Pull image from GHCR
+        run: |
+          docker pull ghcr.io/xotmfrlox/cloud-native-devops-gcp:latest
+          docker images | grep cloud-native-devops-gcp
+
+      - name: Load image into kind
+        run: |
+          kind load docker-image ghcr.io/xotmfrlox/cloud-native-devops-gcp:latest --name devops
+
+      - name: Patch deployment for kind
+        run: |
+          sed -i 's/imagePullPolicy: Always/imagePullPolicy: IfNotPresent/' k8s/deployment.yaml
+          cat k8s/deployment.yaml
 
       - name: Deploy manifests
         run: |
           kubectl apply -f k8s/
-          kubectl rollout status deployment/devops-app --timeout=120s
+          kubectl get pods
+          kubectl rollout status deployment/devops-app --timeout=180s
+
+      - name: Debug on failure
+        if: failure()
+        run: |
+          kubectl get all
+          kubectl describe deployment devops-app
+          kubectl get pods
+          POD_NAME=$(kubectl get pods -l app=devops-app -o jsonpath='{.items[0].metadata.name}')
+          kubectl describe pod $POD_NAME
+          kubectl logs $POD_NAME --all-containers=true || true
+EOF
