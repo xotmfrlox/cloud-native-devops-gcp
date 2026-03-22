@@ -1,4 +1,3 @@
-cat > .github/workflows/deploy.yml <<'EOF'
 name: CD
 
 on:
@@ -68,4 +67,3 @@ jobs:
           POD_NAME=$(kubectl get pods -l app=devops-app -o jsonpath='{.items[0].metadata.name}')
           kubectl describe pod $POD_NAME
           kubectl logs $POD_NAME --all-containers=true || true
-EOF
