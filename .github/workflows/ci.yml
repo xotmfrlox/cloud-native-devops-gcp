@@ -38,10 +38,10 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build image for registry
-        run: docker build -t ghcr.io/xotmfrlox/devops-app:latest -f docker/Dockerfile .
+        run: docker build -t ghcr.io/${{ github.repository }}:latest -f docker/Dockerfile .
 
       - name: Push image to GHCR
-        run: docker push ghcr.io/xotmfrlox/devops-app:latest
+        run: docker push ghcr.io/${{ github.repository }}:latest
 
   deploy-to-kind:
     runs-on: ubuntu-latest

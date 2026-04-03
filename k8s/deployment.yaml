@@ -15,7 +15,7 @@ spec:
       containers:
         - name: app
           image: ghcr.io/xotmfrlox/cloud-native-devops-gcp:latest
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
 
