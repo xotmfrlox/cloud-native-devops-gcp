@@ -44,6 +44,7 @@ app.get('/', async (req, res) => {
   }
 
   const result = await global.client.query('SELECT NOW()');
+  res.send("HELLO DEVOPS");
   res.send(`DB Time: ${result.rows[0].now}`);
 });
 
