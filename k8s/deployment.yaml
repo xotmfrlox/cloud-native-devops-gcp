@@ -15,20 +15,20 @@ spec:
       containers:
         - name: app
           image: ghcr.io/xotmfrlox/cloud-native-devops-gcp:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
 
           readinessProbe:
             httpGet:
-              path: /ready
+              path: /
               port: 3000
             initialDelaySeconds: 20
             periodSeconds: 5
 
           livenessProbe:
             httpGet:
-              path: /health
+              path: /
               port: 3000
             initialDelaySeconds: 30
             periodSeconds: 10

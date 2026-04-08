@@ -3,10 +3,8 @@ kind: Ingress
 metadata:
   name: devops-app
 spec:
-  ingressClassName: nginx
   rules:
-  - host: devops.local
-    http:
+  - http:
       paths:
       - path: /
         pathType: Prefix
@@ -14,4 +12,4 @@ spec:
           service:
             name: devops-app
             port:
-              number: 80
+              number: 80 
