@@ -44,7 +44,7 @@ app.get('/', async (req, res) => {
   }
 
   const result = await global.client.query('SELECT NOW()');
-  res.send(`HELLO DEVOPS V6 - DB Time: ${result.rows[0].now}`);
+  res.send(`HELLO DEVOPS V7 - DB Time: ${result.rows[0].now}`);
 });
 
 app.listen(3000, '0.0.0.0', () => {
