@@ -1,25 +1,52 @@
 const express = require('express');
+const { Client } = require('pg');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
-// 기본 응답
-app.get('/', (req, res) => {
-  res.status(200).send('Hello from cloud-native-devops-gcp');
+const client = new Client({
+  host: 'postgres',
+  user: 'postgres',
+  password: '1234',
+  database: 'appdb',
 });
 
-// health: "살아있냐?" (liveness)
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'ok v1' });
+let dbReady = false;
+
+const connectDB = async () => {
+  while (true) {
+    try {
+      const newClient = new Client({
+        host: 'postgres',
+        user: 'postgres',
+        password: '1234',
+        database: 'appdb',
+      });
+
+      await newClient.connect();
+      console.log("DB connected");
+
+      global.client = newClient;
+      dbReady = true;
+      break;
+
+    } catch (err) {
+      console.log("DB not ready, retrying...");
+      await new Promise(res => setTimeout(res, 2000));
+    }
+  }
+};
+
+connectDB();
+
+app.get('/', async (req, res) => {
+  if (!dbReady) {
+    return res.send("DB not ready yet");
+  }
+
+  const result = await global.client.query('SELECT NOW()');
+  res.send(`HELLO DEVOPS V4 - DB Time: ${result.rows[0].now}`);
 });
 
-// ready: "트래픽 받아도 되냐?" (readiness)
-app.get('/ready', (req, res) => {
-  res.status(200).json({ status: 'ready' });
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Server running on port 3000');
 });
-
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server listening on port ${port}`);
-  console.log("deploy test v2");
-});
-
