@@ -1,5 +1,6 @@
 const express = require('express');
 const { Client } = require('pg');
+const path = require('path');
 
 const app = express();
 
@@ -43,8 +44,7 @@ app.get('/', async (req, res) => {
     return res.send("DB not ready yet");
   }
 
-  const result = await global.client.query('SELECT NOW()');
-  res.send(`HELLO DEVOPS V7 - DB Time: ${result.rows[0].now}`);
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(3000, '0.0.0.0', () => {
