@@ -2,9 +2,18 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: devops-app
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
 spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - seulgichoi.dev
+    - www.seulgichoi.dev
+    secretName: devops-tls
   rules:
-  - http:
+  - host: seulgichoi.dev
+    http:
       paths:
       - path: /
         pathType: Prefix
@@ -12,4 +21,4 @@ spec:
           service:
             name: devops-app
             port:
-              number: 80 
+              number: 80
