@@ -21,6 +21,7 @@ Design and operate a production-like cloud-native environment using containers, 
 ---
 
 ## Project Structure
+```
 cloud-native-devops-gcp/
 ├── app/ # Node.js application (API + DB connection)
 │ ├── server.js
@@ -50,6 +51,7 @@ cloud-native-devops-gcp/
 │ └── deploy.yml
 │
 └── README.md
+```
 
 ---
 
