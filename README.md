@@ -5,6 +5,11 @@
 
 ---
 
+## Version
+v1.0 – Initial release (Cloud Native DevOps pipeline)
+
+---
+
 ## Goal
 Design and operate a production-like cloud-native environment using containers, Infrastructure as Code, and CI/CD automation.
 
