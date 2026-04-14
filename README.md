@@ -20,6 +20,39 @@ Design and operate a production-like cloud-native environment using containers, 
 
 ---
 
+## Project Structure
+cloud-native-devops-gcp/
+├── app/ # Node.js application (API + DB connection)
+│ ├── server.js
+│ ├── package.json
+│ └── index.html
+│
+├── docker/ # Docker configuration
+│ └── Dockerfile
+│
+├── k8s/ # Kubernetes manifests (deployment, service, ingress)
+│ ├── deployment.yaml
+│ ├── service.yaml
+│ ├── ingress.yaml
+│ └── postgres-*.yaml
+│
+├── terraform/ # Infrastructure as Code (Hetzner Cloud)
+│ ├── main.tf
+│ ├── variables.tf
+│ └── outputs.tf
+│
+├── docs/ # Architecture diagrams
+│ ├── architecture.png
+│ └── monitoring.png
+│
+├── .github/workflows/ # CI/CD pipelines
+│ ├── ci.yml
+│ └── deploy.yml
+│
+└── README.md
+
+---
+
 ## Architecture
 ![Architecture](docs/architecture.png)
 End-to-end DevOps architecture including CI/CD, container registry, Kubernetes cluster, and monitoring.
