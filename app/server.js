@@ -37,7 +37,10 @@ const connectDB = async () => {
   }
 };
 
+
 connectDB();
+
+app.use(express.static(__dirname));
 
 app.get('/', async (req, res) => {
   if (!dbReady) {
