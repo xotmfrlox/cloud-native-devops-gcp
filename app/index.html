@@ -237,10 +237,11 @@
       transition: 0.25s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
-    }
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(108, 92, 231, 0.25);
+  border: 1px solid #6c5ce7;
+}
 
 .project-thumb {
   height: 150px;
@@ -379,6 +380,36 @@
       .projects-box {
         padding: 36px 20px;
       }
+      /* 썸네일 라인 */
+.project-thumb {
+  position: relative;
+}
+
+.project-thumb::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #6c5ce7;
+}
+
+/* 태그 hover */
+.tag:hover {
+  background: #6c5ce7;
+  color: white;
+  border-color: #6c5ce7;
+}
+
+/* 제목 hover */
+.project-card h3 {
+  transition: 0.2s;
+}
+
+.project-card:hover h3 {
+  color: #6c5ce7;
+}
     }
   </style>
 </head>
@@ -492,7 +523,8 @@ Focused on practical improvements that make systems easier to operate, more repe
         <div class="projects-grid">
           <div class="project-card">
             <div class="project-thumb">
-            <img src="/app/images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" /></div>
+            <!-- <img src="/app/images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" /></div>-->
+             <img src="images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" /></div>
             <div class="project-subtitle">Kubernetes · Terraform · GitHub Actions</div>
             <h3>Cloud Native DevOps Pipeline</h3>
             <p>
@@ -507,7 +539,8 @@ Focused on practical improvements that make systems easier to operate, more repe
 
           <div class="project-card">
             <div class="project-thumb">
-            <img src="/app/images/projects/air-gapped.png" alt="Cloud Native DevOps Pipeline" /></div>
+            <!-- <img src="/app/images/projects/air-gapped.png" alt="Cloud Native DevOps Pipeline" /></div> -->
+            <img src="images/projects/air-gapped.png" alt="Cloud Native DevOps Pipeline" /></div>
             <div class="project-subtitle">Air-Gapped Environment</div>
             <h3>Secure Offline Infrastructure</h3>
             <p>
@@ -522,7 +555,8 @@ Focused on practical improvements that make systems easier to operate, more repe
 
           <div class="project-card">
             <div class="project-thumb">
-            <img src="/app/images/projects/aws-data.png" alt="Cloud Native DevOps Pipeline" /></div>
+            <!-- <img src="/app/images/projects/aws-data.png" alt="Cloud Native DevOps Pipeline" /></div> -->
+            <img src="images/projects/aws-data.png" alt="Cloud Native DevOps Pipeline" /></div>
             <div class="project-subtitle">Hadoop · Hive · Spark</div>
             <h3>AWS Data Processing</h3>
             <p>
