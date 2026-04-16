@@ -430,12 +430,54 @@
   color: #6c5ce7;
   border-color: #6c5ce7;
 }
+.contact {
+  text-align: center;
+  padding: 50px 0 60px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.contact-links a {
+  display: inline-block;
+}
+
+.contact-links img {
+  width: 22px;
+  height: 22px;
+  filter: grayscale(100%) brightness(0.4);
+  transition: 0.2s;
+}
+
+.contact-links a:hover img {
+  filter: none;
+  transform: translateY(-2px);
+}
   </style>
 </head>
 <body>
   <div class="container">
     <header class="topbar">
-      <div class="brand">SEULGI CHOI</div>
+      <div class="contact-links">
+  <a href="mailto:sggg.choi@gmail.com">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg">
+  </a>
+
+  <a href="https://www.linkedin.com/in/seul96" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg">
+  </a>
+
+  <a href="https://github.com/xotmfrlox" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg">
+  </a>
+
+  <a href="https://seul96.tistory.com/" target="_blank">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/blogger.svg">
+  </a>
+</div>
       <div class="lang-switch">
         <a href="#">EN</a>
         <a href="#">DE</a>
@@ -599,20 +641,7 @@ Focused on practical improvements that make systems easier to operate, more repe
     </div>
   </section>
 
-  <section class="contact">
-    <div class="container">
-      <h2>Get in touch</h2>
-      <p>
-        I’m open to infrastructure and platform-oriented opportunities, especially in cities such as Hamburg and other major locations in Germany.
-      </p>
-
-      <div class="contact-links">
-        <a href="mailto:sggg.choi@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/seul96" target="_blank">LinkedIn</a>
-        <a href="https://github.com/xotmfrlox" target="_blank">GitHub</a>
-        <a href="https://seul96.tistory.com/" target="_blank">Blog</a>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 </body>
 </html>
