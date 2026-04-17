@@ -631,6 +631,78 @@ body.fade-in {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   border-radius: 24px;
 }
+/* ===== CAREER MAP ===== */
+
+.career-map {
+  margin-top: 80px;
+}
+
+.career-box {
+  background: #ffffff;
+  border: 1px solid #e8e2d9;
+  border-radius: 34px;
+  padding: 40px 34px 48px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+.timeline-wrap {
+  position: relative;
+  margin-top: 50px;
+  height: 440px;
+}
+
+.curve-svg,
+.overlay-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.curve-path {
+  fill: none;
+  stroke: #e5dfd6;
+  stroke-width: 3;
+}
+
+.connector {
+  stroke: #ddd4c8;
+  stroke-width: 2;
+}
+
+.dot {
+  fill: #6c5ce7;
+}
+
+.dot.current {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.cards-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.card {
+  position: absolute;
+  width: 210px;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: 1px solid #e8e2d9;
+  border-radius: 20px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.curve-svg { z-index: 1; }
+
+.overlay-svg { z-index: 2; pointer-events: none; }
 
   </style>
 </head>
@@ -770,7 +842,30 @@ Focused on practical improvements that make systems easier to operate, more repe
       </div>
     </div>
   </section>
+<section class="section career-map">
+  <div class="container">
+    <div class="career-box">
+      <div class="section-title">
+        <h2>Career Journey</h2>
+        <p>A structured overview of my career path.</p>
+      </div>
 
+      <div class="timeline-wrap">
+        <svg class="curve-svg" viewBox="0 0 1000 440" preserveAspectRatio="none">
+          <path id="careerPath" class="curve-path"
+            d="M 60 230
+               C 180 120, 300 80, 420 160
+               C 520 225, 585 370, 700 370
+               C 820 370, 900 265, 960 170" />
+        </svg>
+
+        <svg class="overlay-svg" id="overlay" viewBox="0 0 1000 440" preserveAspectRatio="none"></svg>
+
+        <div class="cards-layer" id="cardsLayer"></div>
+      </div>
+    </div>
+  </div>
+</section>
   <section class="section work-section">
   <div class="container">
     <div class="section-title">
@@ -944,6 +1039,58 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+const data = [
+  { t: 0.03, year:"2015–2018", title:"Dongyang Mirae University", sub:"Associate", dx:-70, dy:-95 },
+  { t: 0.22, year:"2018–2022", title:"Dream Security", sub:"Infra Engineer", dx:-120, dy:-75 },
+  { t: 0.38, year:"2019–2020", title:"Dongyang Mirae University", sub:"Bachelor", dx:0, dy:-120 },
+  { t: 0.56, year:"2023", title:"RaonSecure Korea", sub:"Infra/Security", dx:-90, dy:-55 },
+  { t: 0.79, year:"2024–Current", title:"QuinLogic Germany", sub:"Infra/Platform", dx:-40, dy:-120 },
+  { t: 1.0, year:"2026", title:"Next Step", sub:"DevOps", dx:-90, dy:-85, current:true }
+];
+
+function renderTimeline() {
+  const path = document.getElementById("careerPath");
+  const overlay = document.getElementById("overlay");
+  const cards = document.getElementById("cardsLayer");
+
+  overlay.innerHTML = "";
+  cards.innerHTML = "";
+
+  const total = path.getTotalLength();
+
+  data.forEach(item => {
+    const p = path.getPointAtLength(total * item.t);
+    const svg = path.ownerSVGElement;
+const rect = svg.getBoundingClientRect();
+const scaleX = rect.width / 1000;
+const scaleY = rect.height / 440;
+
+    // dot
+    const dot = document.createElementNS("http://www.w3.org/2000/svg","circle");
+    dot.setAttribute("cx", p.x);
+    dot.setAttribute("cy", p.y);
+    dot.setAttribute("r", item.current ? 7 : 6);
+    dot.setAttribute("class", item.current ? "dot current" : "dot");
+    overlay.appendChild(dot);
+
+    // card
+    const card = document.createElement("div");
+    card.className = "card";
+    card.style.left = (p.x + item.dx) + "px";
+    card.style.top = (p.y + item.dy) + "px";
+    card.innerHTML = `
+      <div class="year">${item.year}</div>
+      <div class="title">${item.title}</div>
+      <div class="sub">${item.sub}</div>
+    `;
+    cards.appendChild(card);
+  });
+}
+
+window.onload = renderTimeline;
+window.onresize = renderTimeline;
+
 </script>
 </body>
 </html>
