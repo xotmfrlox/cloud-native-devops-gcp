@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Data Processing | Seulgi Choi</title>
+
+   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4ee;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #6c5ce7;
+    }
+
+    .project-hero {
+      margin-bottom: 36px;
+    }
+
+    .project-role {
+      color: #6c5ce7;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.1;
+      color: #1f1f1f;
+    }
+
+    .project-desc {
+      margin-top: 18px;
+      font-size: 18px;
+      color: #555;
+      max-width: 760px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      font-size: 13px;
+      color: #666;
+      background: #fff;
+      border: 1px solid #e5e0d8;
+      border-radius: 999px;
+      padding: 7px 12px;
+    }
+
+    .hero-image,
+    .diagram-image {
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid #e8e2d9;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+      background: #fff;
+      display: block;
+    }
+
+    .hero-image-wrap {
+      margin-top: 28px;
+    }
+
+    .section {
+      margin-top: 48px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .section p {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .diagram-caption {
+      margin-top: 14px;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .list {
+      margin: 16px 0 0;
+      padding-left: 20px;
+      color: #555;
+    }
+
+    .list li {
+      margin-bottom: 10px;
+    }
+
+    .info-box {
+      margin-top: 18px;
+      background: #fff;
+      border: 1px solid #e8e2d9;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .links a {
+      color: #6c5ce7;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    @media (max-width: 680px) {
+      .project-title {
+        font-size: 36px;
+      }
+
+      .project-desc {
+        font-size: 17px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-link">← Back to portfolio</a>
+
+    <section class="project-hero">
+      <div class="project-role">AWS · Hadoop · Spark · Hive</div>
+      <h1 class="project-title">AWS Data Processing</h1>
+      <p class="project-desc">
+        Built a distributed data processing environment on AWS EC2 using Hadoop ecosystem
+        to understand cluster architecture, data flow, and large-scale processing systems.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">AWS</span>
+        <span class="tag">Hadoop</span>
+        <span class="tag">Spark</span>
+        <span class="tag">Hive</span>
+        <span class="tag">EC2</span>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="../images/projects/aws-data.png" class="hero-image" />
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Overview</h2>
+      <p>
+        This project focused on understanding distributed computing systems by building a Hadoop-based data processing environment on AWS.
+        It provided hands-on experience with cluster setup, data storage, and processing workflows.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Architecture</h2>
+      <p>
+        The system was deployed on AWS EC2 instances, forming a distributed cluster.
+        Hadoop handled data storage, Hive provided querying capability, and Spark was used for data processing tasks.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>What I Built</h2>
+      <ul class="list">
+        <li>Configured Hadoop cluster across multiple EC2 instances</li>
+        <li>Set up Hive for structured data querying</li>
+        <li>Implemented Spark jobs for data processing</li>
+        <li>Managed cluster communication and metadata</li>
+        <li>Tested distributed data workflows</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Challenges & Solutions</h2>
+      <div class="info-box">
+        <p>
+          The main challenge was understanding and managing distributed system behavior across multiple nodes.
+        </p>
+        <ul class="list">
+          <li>
+            <strong>Challenge:</strong> Cluster configuration complexity.<br/>
+            <strong>Solution:</strong> Carefully configured node roles and communication.
+          </li>
+          <li>
+            <strong>Challenge:</strong> Data consistency across distributed environment.<br/>
+            <strong>Solution:</strong> Used Hadoop HDFS and metadata management.
+          </li>
+          <li>
+            <strong>Challenge:</strong> Processing large data efficiently.<br/>
+            <strong>Solution:</strong> Leveraged Spark for distributed computation.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Result</h2>
+      <p>
+        This project improved my understanding of distributed systems, cluster-based architecture,
+        and large-scale data processing workflows in cloud environments.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Links</h2>
+      <div class="links">
+        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank">Blog</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
