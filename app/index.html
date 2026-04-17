@@ -534,6 +534,92 @@ body.fade-in {
 .project-card:hover::after {
   opacity: 1;
 }
+.work-section {
+  margin-top: 60px;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 50px;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #f0ebe4;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  background: #6c5ce7;
+  border-radius: 50%;
+}
+
+.timeline-content {
+  background: #fcfbf8;
+  border: 1px solid #ece6dd;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  transition: 0.25s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(108, 92, 231, 0.25);
+  border: 1px solid #6c5ce7;
+}
+
+.timeline-date {
+  font-size: 13px;
+  color: #6c5ce7;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #222;
+}
+
+.company {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.impact {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.list {
+  margin-top: 14px;
+  padding-left: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+.list li {
+  margin-bottom: 6px;
+}
   </style>
 </head>
 <body>
@@ -663,6 +749,88 @@ Focused on practical improvements that make systems easier to operate, more repe
       </div>
     </div>
   </section>
+
+  <section class="work-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Work Experience</h2>
+      <p>From enterprise infrastructure to DevOps automation, focused on reliability, security, and scalable systems.</p>
+    </div>
+
+    <div class="timeline">
+
+      <!-- QuinLogic -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <div class="timeline-date">Apr 2024 – Present</div>
+
+          <h3>Software Engineer (Infrastructure / Platform)</h3>
+          <div class="company">QuinLogic GmbH · Aachen, Germany</div>
+
+          <p class="impact">
+            Reduced manual deployment effort and improved system reliability by automating release workflows and integrating secure authentication systems.
+          </p>
+
+          <ul class="list">
+            <li>Automated deployment workflows using Windows-based batch scripting</li>
+            <li>Implemented OAuth2 authentication and integrated Keycloak in container-based environments</li>
+            <li>Built automation for database data generation from Excel/CSV pipelines</li>
+            <li>Resolved application-level issues in C# environments with dev team collaboration</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RaonSecure -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <div class="timeline-date">Mar 2023 – Mar 2024</div>
+
+          <h3>Infrastructure / DevOps Engineer</h3>
+          <div class="company">RaonSecure · Seoul, South Korea</div>
+
+          <p class="impact">
+            Stabilized enterprise environments across 15+ projects by integrating authentication systems and standardizing infrastructure operations.
+          </p>
+
+          <ul class="list">
+            <li>Integrated FIDO and OTP authentication into enterprise systems</li>
+            <li>Supported database and middleware (WAS) environments across multiple clients</li>
+            <li>Executed disaster recovery (DR) tests and maintained Linux servers</li>
+            <li>Standardized test environments to reduce repetitive operational workload</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Dream Security -->
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+
+        <div class="timeline-content">
+          <div class="timeline-date">Oct 2018 – Apr 2022</div>
+
+          <h3>Infrastructure Engineer</h3>
+          <div class="company">Dream Security · Seoul, South Korea</div>
+
+          <p class="impact">
+            Built and operated secure infrastructure in enterprise and air-gapped environments, reducing deployment time by 70% through automation.
+          </p>
+
+          <ul class="list">
+            <li>Operated Linux-based infrastructure (OS, WEB/WAS, DB, SSL)</li>
+            <li>Automated provisioning using shell scripts (≈70% faster setup)</li>
+            <li>Performed DB migration, encryption, and HA operations</li>
+            <li>Delivered security-critical systems (FIDO, encryption) under strict deadlines</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <section class="projects-wrap">
     <div class="container">
