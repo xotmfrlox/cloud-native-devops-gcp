@@ -62,9 +62,9 @@
 
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 430px;
-  gap: 16px;
-  align-items: center;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: stretch;
 }
 
 
@@ -85,6 +85,7 @@
       margin: 20px 0 0;
       color: #1f1f1f;
     }
+    
 
     .hero-desc {
       max-width: 760px;
@@ -447,7 +448,8 @@
 
 .hero-image {
   width: 100%;
-  height: 470px;
+  height: 90%;
+  align-self: center;
   overflow: hidden;
   border-radius: 28px;
   border: 1px solid #e8e2d9;
@@ -490,6 +492,16 @@
 
   100% { transform: translateX(0); }
 }
+.info-card {
+  transition: all 0.2s ease;
+}
+
+.info-card:hover {
+  border-color: #6c5ce7;
+  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25);
+  transform: translateY(-3px);
+}
+
   </style>
 </head>
 <body>
@@ -528,25 +540,41 @@
             I turn complex infrastructure into simple, automated systems, with hands-on experience in enterprise environments and a strong focus on reliability, communication, and continuous learning.
           </p>
 
-          <div class="info-grid">
-            <div class="info-card">
-              <div class="label">Experience</div>
-              <div class="value">6+ years</div>
-            </div>
-            <div class="info-card">
-              <div class="label">Location</div>
-              <div class="value">Aachen, Germany <br />(Open to Relocation)</div>
-            </div>
-            <div class="info-card">
-              <div class="label">Education</div>
-              <div class="value">Information & Communication Engineering</div>
-            </div>
-            <div class="info-card">
-              <div class="label">Work Authorization</div>
-              <div class="value">EU Blue Card <br />(No Sponsorship Required)</div>
-            </div>
-          </div>
-        </div>
+<div class="info-grid">
+  <div class="info-card">
+    <div class="label">Experience</div>
+    <div class="value">6+ years</div>
+  </div>
+
+  <div class="info-card">
+    <div class="label">Location</div>
+    <div class="value">Aachen, Germany <br />(Open to Relocation)</div>
+  </div>
+
+  <div class="info-card">
+    <div class="label">Education</div>
+    <div class="value">B.Sc. Information & Communication Engineering</div>
+  </div>
+
+  <div class="info-card">
+    <div class="label">Work Authorization</div>
+    <div class="value">EU Blue Card <br />(No Sponsorship Required)</div>
+  </div>
+
+  <div class="info-card">
+    <div class="label">Languages</div>
+    <div class="value">English (B2) · German (B1) · <br/>
+      Korean (Native)</div>
+  </div>
+
+  <div class="info-card">
+    <div class="label">Availability</div>
+    <div class="value">Notice period: 2 months<br/>
+      Available after notice period
+    </div>
+  </div>
+</div>
+</div>
 <div class="hero-image">
   <div class="image-slider">
     <img src="images/profile1.jpg" />
@@ -554,7 +582,6 @@
     <img src="images/profile3.jpg" />
     <img src="images/profile4.jpeg" />
   </div>
-</div>
 
       </div>
     </section>
