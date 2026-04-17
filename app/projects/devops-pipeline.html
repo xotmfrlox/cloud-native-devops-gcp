@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Native DevOps Pipeline | Seulgi Choi</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4ee;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #6c5ce7;
+    }
+
+    .project-hero {
+      margin-bottom: 36px;
+    }
+
+    .project-role {
+      color: #6c5ce7;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 48px;
+      line-height: 1.1;
+      color: #1f1f1f;
+    }
+
+    .project-desc {
+      margin-top: 18px;
+      font-size: 18px;
+      color: #555;
+      max-width: 760px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      font-size: 13px;
+      color: #666;
+      background: #fff;
+      border: 1px solid #e5e0d8;
+      border-radius: 999px;
+      padding: 7px 12px;
+    }
+
+    .hero-image,
+    .diagram-image {
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid #e8e2d9;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+      background: #fff;
+      display: block;
+    }
+
+    .hero-image-wrap {
+      margin-top: 28px;
+    }
+
+    .section {
+      margin-top: 48px;
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      color: #222;
+    }
+
+    .section p {
+      margin: 0;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .diagram-caption {
+      margin-top: 14px;
+      font-size: 15px;
+      color: #666;
+    }
+
+    .list {
+      margin: 16px 0 0;
+      padding-left: 20px;
+      color: #555;
+    }
+
+    .list li {
+      margin-bottom: 10px;
+    }
+
+    .info-box {
+      margin-top: 18px;
+      background: #fff;
+      border: 1px solid #e8e2d9;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .links a {
+      color: #6c5ce7;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    @media (max-width: 680px) {
+      .project-title {
+        font-size: 36px;
+      }
+
+      .project-desc {
+        font-size: 17px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-link">← Back to portfolio</a>
+
+    <section class="project-hero">
+      <div class="project-role">Kubernetes · Terraform · GitHub Actions</div>
+      <h1 class="project-title">Cloud Native DevOps Pipeline</h1>
+      <p class="project-desc">
+        Built an end-to-end DevOps pipeline from source code to Kubernetes deployment,
+        covering CI/CD automation, containerization, infrastructure provisioning,
+        and monitoring in a cloud-native workflow.
+      </p>
+
+      <div class="tag-list">
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Terraform</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">Hetzner</span>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img
+          src="../images/projects/devops-pipeline.png"
+          alt="Cloud Native DevOps Pipeline preview"
+          class="hero-image"
+        />
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Overview</h2>
+      <p>
+        This project was built to understand and implement the full delivery flow
+        of a modern DevOps environment: from writing code and building Docker images
+        to provisioning infrastructure, deploying on Kubernetes, and monitoring the
+        running application.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Architecture</h2>
+ <p>
+    This project follows an end-to-end DevOps workflow:
+    source code is pushed to GitHub, automated through GitHub Actions,
+    container images are stored in GHCR, infrastructure is provisioned with Terraform on Hetzner,
+    and the application is deployed to a k3s Kubernetes cluster with monitoring through Prometheus and Grafana.
+  </p>
+    </section>
+
+    <section class="section">
+      <h2>What I Built</h2>
+      <ul class="list">
+        <li>Containerized the application with Docker and prepared it for repeatable deployment.</li>
+        <li>Built a GitHub Actions workflow for build, validation, image push, and deployment steps.</li>
+        <li>Provisioned infrastructure using Terraform on Hetzner Cloud.</li>
+        <li>Configured Kubernetes resources including Deployment, Service, Ingress, ConfigMap, and Secret.</li>
+        <li>Applied liveness and readiness probes to improve deployment reliability.</li>
+        <li>Configured Prometheus and Grafana for monitoring and dashboard visibility.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Challenges & Solutions</h2>
+      <div class="info-box">
+        <p>
+          One of the main challenges was connecting several DevOps components into one
+          coherent workflow rather than treating them as isolated tools. The project
+          required decisions about image flow, infrastructure ownership, deployment order,
+          and service exposure in Kubernetes.
+        </p>
+        <ul class="list">
+          <li>
+            <strong>Challenge:</strong> Making deployment repeatable across infrastructure and application layers.<br />
+            <strong>Solution:</strong> Separated infrastructure provisioning with Terraform from application deployment through Kubernetes manifests and CI/CD steps.
+          </li>
+          <li>
+            <strong>Challenge:</strong> Avoiding unstable rollouts and hidden runtime failures.<br />
+            <strong>Solution:</strong> Added readiness and liveness probes so deployments could be validated by Kubernetes.
+          </li>
+          <li>
+            <strong>Challenge:</strong> Observing the system after deployment, not just completing deployment.<br />
+            <strong>Solution:</strong> Integrated Prometheus and Grafana to monitor health and metrics after rollout.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Result</h2>
+      <p>
+        The project gave me practical experience in building a complete DevOps delivery path
+        rather than only using individual tools. It improved my understanding of how CI/CD,
+        infrastructure as code, Kubernetes deployment, and monitoring work together in one system.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Links</h2>
+      <div class="links">
+        <a href="https://github.com/xotmfrlox/cloud-native-devops-gcp" target="_blank">GitHub</a>
+        <a href="https://seul96.tistory.com/492/" target="_blank">Blog</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

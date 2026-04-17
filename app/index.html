@@ -13,12 +13,18 @@
       scroll-behavior: smooth;
     }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f4ee;
-      color: #333;
-    }
+ body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f4ee;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
 
     a {
       color: inherit;
@@ -501,6 +507,15 @@
   box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25);
   transform: translateY(-3px);
 }
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-link:hover {
+  text-decoration: none;
+}
 
   </style>
 </head>
@@ -643,22 +658,23 @@ Focused on practical improvements that make systems easier to operate, more repe
         
 
         <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-thumb">
-             <!-- <img src="images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" /></div> -->
-            <img src="images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" /></div>
-            <div class="project-subtitle">Kubernetes · Terraform · GitHub Actions</div>
-            <h3>Cloud Native DevOps Pipeline</h3>
-            <p>
-              Built an end-to-end deployment workflow from source code to Kubernetes, including infrastructure provisioning, CI/CD, monitoring, and health checks.
-            </p>
-            <div class="tags">
-              <span class="tag">CI/CD</span>
-              <span class="tag">Docker</span>
-              <span class="tag">Kubernetes</span>
-            </div>
-            
-          </div>
+<a href="projects/devops-pipeline.html" class="project-link">
+  <div class="project-card">
+    <div class="project-thumb">
+      <img src="images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" />
+    </div>
+    <div class="project-subtitle">Kubernetes · Terraform · GitHub Actions</div>
+    <h3>Cloud Native DevOps Pipeline</h3>
+    <p>
+      Built an end-to-end deployment workflow from source code to Kubernetes, including infrastructure provisioning, CI/CD, monitoring, and health checks.
+    </p>
+    <div class="tags">
+      <span class="tag">CI/CD</span>
+      <span class="tag">Docker</span>
+      <span class="tag">Kubernetes</span>
+    </div>
+  </div>
+</a>
 
           <div class="project-card">
             <div class="project-thumb">
@@ -703,5 +719,27 @@ Focused on practical improvements that make systems easier to operate, more repe
 
   </div>
 </section>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.body.classList.add("fade-in");
+
+  const links = document.querySelectorAll("a");
+
+  links.forEach(function(link) {
+    link.addEventListener("click", function(e) {
+      if (link.hostname === window.location.hostname && !link.target) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+
+        setTimeout(function () {
+          window.location.href = link.href;
+        }, 200);
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
