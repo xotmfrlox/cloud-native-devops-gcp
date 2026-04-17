@@ -643,7 +643,7 @@ body.fade-in {
   border-radius: 34px;
   padding: 40px 34px 48px;
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .timeline-wrap {
@@ -667,8 +667,10 @@ body.fade-in {
 }
 
 .connector {
-  stroke: #ddd4c8;
+  stroke: #6c5ce7;
   stroke-width: 2;
+  stroke-dasharray: 6 6;
+  opacity: 0.7;
 }
 
 .dot {
@@ -676,13 +678,15 @@ body.fade-in {
 }
 
 .dot.current {
-  animation: pulse 1.5s infinite;
+  fill: #ff4d4f;
+  animation: pulse 1.4s infinite;
 }
 
+/* 핵심: 크기 변화 */
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
+  0%   { r: 6; opacity: 1; }
+  50%  { r: 11; opacity: 0.3; }
+  100% { r: 6; opacity: 1; }
 }
 
 .cards-layer {
@@ -703,7 +707,15 @@ body.fade-in {
 .curve-svg { z-index: 1; }
 
 .overlay-svg { z-index: 2; pointer-events: none; }
-
+.career-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.career-box {
+  overflow: hidden;
+}
   </style>
 </head>
 <body>
@@ -843,7 +855,7 @@ Focused on practical improvements that make systems easier to operate, more repe
     </div>
   </section>
 <section class="section career-map">
-  <div class="container">
+  <div class="career-wrapper">
     <div class="career-box">
       <div class="section-title">
         <h2>Career Journey</h2>
@@ -1041,12 +1053,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const data = [
-  { t: 0.03, year:"2015–2018", title:"Dongyang Mirae University", sub:"Associate", dx:-70, dy:-95 },
-  { t: 0.22, year:"2018–2022", title:"Dream Security", sub:"Infra Engineer", dx:-120, dy:-75 },
-  { t: 0.38, year:"2019–2020", title:"Dongyang Mirae University", sub:"Bachelor", dx:0, dy:-120 },
-  { t: 0.56, year:"2023", title:"RaonSecure Korea", sub:"Infra/Security", dx:-90, dy:-55 },
-  { t: 0.79, year:"2024–Current", title:"QuinLogic Germany", sub:"Infra/Platform", dx:-40, dy:-120 },
-  { t: 1.0, year:"2026", title:"Next Step", sub:"DevOps", dx:-90, dy:-85, current:true }
+  { t: 0.03, year:"2015–2018", title:"Dongyang Mirae University", sub:"Associate", dx:0, dy:70 },
+
+  { t: 0.22, year:"2018–2022", title:"Dream Security", sub:"Infra Engineer", dx:-80, dy:-80 },
+
+  // 🔥 이거 겹침 원인 → 아래로 내림
+  { t: 0.38, year:"2019–2020", title:"Dongyang Mirae University", sub:"Bachelor", dx:120, dy:110 },
+
+  // 🔥 이것도 살짝 위로 올림
+  { t: 0.56, year:"2023", title:"RaonSecure Korea", sub:"Infra/Security", dx:-100, dy:-90 },
+
+  { t: 0.79, year:"2024–Current", title:"QuinLogic Germany", sub:"Infra/Platform", dx:-20, dy:90 },
+
+  // 🔥 이게 핵심 (오른쪽 튀어나감 해결)
+  { t: 1.0, year:"2026", title:"Next Step", sub:"Infrastructure / DevOps Engineer", dx:-140, dy:-80, current:true }
 ];
 
 function renderTimeline() {
@@ -1061,24 +1081,34 @@ function renderTimeline() {
 
   data.forEach(item => {
     const p = path.getPointAtLength(total * item.t);
-    const svg = path.ownerSVGElement;
-const rect = svg.getBoundingClientRect();
-const scaleX = rect.width / 1000;
-const scaleY = rect.height / 440;
+const wrap = document.querySelector(".timeline-wrap");
+const rect = wrap.getBoundingClientRect();
+
+const x = (p.x / 1000) * rect.width;
+const y = (p.y / 440) * rect.height;
+    
 
     // dot
     const dot = document.createElementNS("http://www.w3.org/2000/svg","circle");
     dot.setAttribute("cx", p.x);
     dot.setAttribute("cy", p.y);
-    dot.setAttribute("r", item.current ? 7 : 6);
+    dot.setAttribute("r", 6);
     dot.setAttribute("class", item.current ? "dot current" : "dot");
     overlay.appendChild(dot);
+const line = document.createElementNS("http://www.w3.org/2000/svg","line");
+line.setAttribute("x1", p.x);
+line.setAttribute("y1", p.y);
+line.setAttribute("x2", p.x);
+const offset = item.dy > 0 ? 60 : -60;
+line.setAttribute("y2", p.y + offset);
+line.setAttribute("class", "connector");
+overlay.appendChild(line);
 
     // card
     const card = document.createElement("div");
     card.className = "card";
-    card.style.left = (p.x + item.dx) + "px";
-    card.style.top = (p.y + item.dy) + "px";
+card.style.left = (x + item.dx) + "px";
+card.style.top = (y + item.dy) + "px";
     card.innerHTML = `
       <div class="year">${item.year}</div>
       <div class="title">${item.title}</div>
