@@ -631,91 +631,113 @@ body.fade-in {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   border-radius: 24px;
 }
-/* ===== CAREER MAP ===== */
-
-.career-map {
-  margin-top: 80px;
+/* ===== HEADER ===== */
+.career-header {
+  font-size:13px;
+  font-weight:600;
+  color:#999;
+  margin-bottom:20px;
+  letter-spacing:0.08em;
 }
 
+/* ===== BOX ===== */
 .career-box {
-  background: #ffffff;
-  border: 1px solid #e8e2d9;
-  border-radius: 34px;
-  padding: 40px 34px 48px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
-  overflow: visible;
+  width:100%;
+  height:460px;
+  background:white;
+  border-radius:30px;
+  position:relative;
+  border:1px solid #e8e2d9;
+  box-shadow:0 10px 28px rgba(0,0,0,0.04);
 }
 
-.timeline-wrap {
-  position: relative;
-  margin-top: 50px;
-  height: 440px;
+/* ===== SVG ===== */
+svg, #overlay {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
 }
 
-.curve-svg,
-.overlay-svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+/* ===== CURVE ===== */
+.path {
+  fill:none;
+  stroke:#dcd6ff;
+  stroke-width:6;
+  opacity:0.7;
 }
 
-.curve-path {
-  fill: none;
-  stroke: #e5dfd6;
-  stroke-width: 3;
+.dash {
+  stroke:#c9c2ff;
+  stroke-width:1.5;
+  stroke-dasharray:4 6;
+  opacity:0.6;
 }
 
-.connector {
-  stroke: #6c5ce7;
-  stroke-width: 2;
-  stroke-dasharray: 6 6;
-  opacity: 0.7;
-}
+/* ===== DOT ===== */
+.dot { stroke:white; stroke-width:2; }
 
-.dot {
-  fill: #6c5ce7;
-}
+.dot.career { fill:#6c5ce7; }
+.dot.education { fill:#a29bfe; }
+.dot.cert { fill:#cfcfcf; }
 
 .dot.current {
-  fill: #ff4d4f;
-  animation: pulse 1.4s infinite;
+  fill:#ff3b3b;
+  animation:pulse 1.4s infinite;
 }
 
-/* 핵심: 크기 변화 */
 @keyframes pulse {
-  0%   { r: 6; opacity: 1; }
-  50%  { r: 11; opacity: 0.3; }
-  100% { r: 6; opacity: 1; }
+  0% { r:6; opacity:1; }
+  50% { r:16; opacity:0.15; }
+  100% { r:6; opacity:1; }
 }
 
-.cards-layer {
-  position: absolute;
-  inset: 0;
-}
-
+/* ===== CARD ===== */
 .card {
-  position: absolute;
-  width: 210px;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  border: 1px solid #e8e2d9;
-  border-radius: 20px;
-  padding: 14px 16px;
-  text-align: center;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  background:#fff;
+  padding:12px 14px;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  text-align:center;
 }
-.curve-svg { z-index: 1; }
 
-.overlay-svg { z-index: 2; pointer-events: none; }
-.career-wrapper {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
+.card.career { width:130px; }
+.card.education { width:120px; }
+.card.cert { width:90px; }
+
+/* ===== TEXT ===== */
+.year {
+  font-size:11px;
+  color:#6c5ce7;
+  font-weight:600;
 }
-.career-box {
-  overflow: hidden;
+
+.title {
+  font-size:13px;
+  font-weight:600;
+  color:#222;
 }
+
+.sub {
+  font-size:11px;
+  color:#888;
+}
+
+/* ===== LABEL ===== */
+.career-box .label {
+  position:absolute;
+  left:20px;
+  font-size:12px;
+  font-weight:600;
+  color:#aaa;
+}
+
+.label.career { top:110px; }
+.label.education { top:210px; }
+.label.cert { top:340px; }
+
   </style>
 </head>
 <body>
@@ -854,27 +876,25 @@ Focused on practical improvements that make systems easier to operate, more repe
       </div>
     </div>
   </section>
-<section class="section career-map">
-  <div class="career-wrapper">
+  <section class="section">
+  <div class="container">
+
     <div class="career-box">
-      <div class="section-title">
-        <h2>Career Journey</h2>
-        <p>A structured overview of my career path.</p>
-      </div>
 
-      <div class="timeline-wrap">
-        <svg class="curve-svg" viewBox="0 0 1000 440" preserveAspectRatio="none">
-          <path id="careerPath" class="curve-path"
-            d="M 60 230
-               C 180 120, 300 80, 420 160
-               C 520 225, 585 370, 700 370
-               C 820 370, 900 265, 960 170" />
-        </svg>
+      <div class="label career">Work</div>
+      <div class="label education">Education</div>
+      <div class="label cert">Cert</div>
 
-        <svg class="overlay-svg" id="overlay" viewBox="0 0 1000 440" preserveAspectRatio="none"></svg>
+      <svg viewBox="0 0 1000 400">
+        <path id="curve" class="path"
+          d="M 50 200 
+             C 200 80, 350 80, 500 200
+             C 650 320, 800 320, 950 150"/>
+      </svg>
 
-        <div class="cards-layer" id="cardsLayer"></div>
-      </div>
+      <svg id="overlay" viewBox="0 0 1000 400"></svg>
+      <div id="cards"></div>
+
     </div>
   </div>
 </section>
@@ -1051,75 +1071,88 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+</script>
+<script>
 
 const data = [
-  { t: 0.03, year:"2015–2018", title:"Dongyang Mirae University", sub:"Associate", dx:0, dy:70 },
+  { t:0.25, type:"career", year:"2018–2022", title:"Dream Security", sub:"Infra Engineer", offsetY:-70 },
+  { t:0.65, type:"career", year:"2023", title:"RaonSecure", sub:"Infra/Security" },
+  { t:0.85, type:"career", year:"2024–Now", title:"QuinLogic", sub:"Platform Engineer" },
+  { t:0.97, type:"career", year:"Next", title:"Infrastructure / DevOps", sub:"Next Step", current:true, offsetY:-60 },
 
-  { t: 0.22, year:"2018–2022", title:"Dream Security", sub:"Infra Engineer", dx:-80, dy:-80 },
+  { t:0.05, type:"education", year:"2015–2018", title:"University", sub:"Associate" },
+  { t:0.45, type:"education", year:"2019–2020", title:"Bachelor", sub:"Degree" },
 
-  // 🔥 이거 겹침 원인 → 아래로 내림
-  { t: 0.38, year:"2019–2020", title:"Dongyang Mirae University", sub:"Bachelor", dx:120, dy:110 },
-
-  // 🔥 이것도 살짝 위로 올림
-  { t: 0.56, year:"2023", title:"RaonSecure Korea", sub:"Infra/Security", dx:-100, dy:-90 },
-
-  { t: 0.79, year:"2024–Current", title:"QuinLogic Germany", sub:"Infra/Platform", dx:-20, dy:90 },
-
-  // 🔥 이게 핵심 (오른쪽 튀어나감 해결)
-  { t: 1.0, year:"2026", title:"Next Step", sub:"Infrastructure / DevOps Engineer", dx:-140, dy:-80, current:true }
+  { t:0.30, type:"cert", year:"2019", title:"Computer Specialist", sub:"Lv.2" },
+  { t:0.55, type:"cert", year:"2021", title:"Driver License", sub:"" },
+  { t:0.70, type:"cert", year:"2022", title:"Linux Master", sub:"Lv.2" },
+  { t:0.92, type:"cert", year:"2024", title:"German B1", sub:"" }
 ];
 
-function renderTimeline() {
-  const path = document.getElementById("careerPath");
-  const overlay = document.getElementById("overlay");
-  const cards = document.getElementById("cardsLayer");
+const rowY = {
+  career:120,
+  education:210,
+  cert:340
+};
 
-  overlay.innerHTML = "";
-  cards.innerHTML = "";
+const path = document.getElementById("curve");
+const overlay = document.getElementById("overlay");
+const cards = document.getElementById("cards");
+
+if(path && overlay && cards){
 
   const total = path.getTotalLength();
+  const box = document.querySelector(".career-box").getBoundingClientRect();
 
   data.forEach(item => {
+
     const p = path.getPointAtLength(total * item.t);
-const wrap = document.querySelector(".timeline-wrap");
-const rect = wrap.getBoundingClientRect();
 
-const x = (p.x / 1000) * rect.width;
-const y = (p.y / 440) * rect.height;
-    
+    const x = p.x;
+    const dotY = p.y;
+    const cardY = rowY[item.type] + (item.offsetY || 0);
 
-    // dot
+    /* dot */
     const dot = document.createElementNS("http://www.w3.org/2000/svg","circle");
-    dot.setAttribute("cx", p.x);
-    dot.setAttribute("cy", p.y);
-    dot.setAttribute("r", 6);
-    dot.setAttribute("class", item.current ? "dot current" : "dot");
-    overlay.appendChild(dot);
-const line = document.createElementNS("http://www.w3.org/2000/svg","line");
-line.setAttribute("x1", p.x);
-line.setAttribute("y1", p.y);
-line.setAttribute("x2", p.x);
-const offset = item.dy > 0 ? 60 : -60;
-line.setAttribute("y2", p.y + offset);
-line.setAttribute("class", "connector");
-overlay.appendChild(line);
+    dot.setAttribute("cx", x);
+    dot.setAttribute("cy", dotY);
+    dot.setAttribute("r", item.type==="cert"?4:6);
 
-    // card
+    let cls = "dot " + item.type;
+    if(item.current) cls += " current";
+
+    dot.setAttribute("class", cls);
+    overlay.appendChild(dot);
+
+    /* line */
+    const line = document.createElementNS("http://www.w3.org/2000/svg","line");
+    line.setAttribute("x1", x);
+    line.setAttribute("y1", dotY);
+    line.setAttribute("x2", x);
+    line.setAttribute("y2", cardY);
+    line.setAttribute("class","dash");
+    overlay.appendChild(line);
+
+    /* card */
     const card = document.createElement("div");
-    card.className = "card";
-card.style.left = (x + item.dx) + "px";
-card.style.top = (y + item.dy) + "px";
+    card.className = "card " + item.type;
+
+    const px = (x / 1000) * box.width;
+    const py = (cardY / 400) * box.height;
+
+    card.style.left = px + "px";
+    card.style.top = py + "px";
+
     card.innerHTML = `
       <div class="year">${item.year}</div>
       <div class="title">${item.title}</div>
       <div class="sub">${item.sub}</div>
     `;
+
     cards.appendChild(card);
+
   });
 }
-
-window.onload = renderTimeline;
-window.onresize = renderTimeline;
 
 </script>
 </body>
