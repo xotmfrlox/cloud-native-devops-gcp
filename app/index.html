@@ -137,7 +137,7 @@ body.fade-in {
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 28px;
     }
 
@@ -145,7 +145,7 @@ body.fade-in {
       background: white;
       border: 1px solid #e8e2d9;
       border-radius: 28px;
-      padding: 34px 28px;
+      padding: 24px 20px;
       text-align: center;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
     }
@@ -838,53 +838,76 @@ svg, #overlay {
   </div>
    </section>
 
-  <section class="section cards-section">
-    <div class="container">
-          <div class="section-title">
+ <section class="section cards-section">
+  <div class="container">
+
+    <div class="section-title">
       <h2>Core Skills</h2>
       <p>Technologies and areas I work with in infrastructure and DevOps</p>
     </div>
-      <div class="cards-grid">
-        <div class="feature-card">
-          <!-- <div class="feature-icon"></div> -->
-          <h3>Infrastructure</h3>
-          <p>
-Built and operated Linux-based enterprise infrastructure across databases, middleware, and security-focused environments.          <div class="feature-list">
-            Linux / Unix<br />
-            DB Operations<br />
-            Middleware / WAS<br />
-            Security Systems
-          </div>
-        </div>
 
-        <div class="feature-card">
-          <!--<div class="feature-icon">•</div>-->
-          <h3>DevOps & Automation</h3>
-          <p>
-            Built automation and deployment workflows to reduce manual effort and improve consistency across environments.
-          <div class="feature-list">
-            CI/CD<br />
-            Docker / Kubernetes<br />
-            Terraform<br />
-            Monitoring
-          </div>
-        </div>
+    <div class="cards-grid">
 
-        <div class="feature-card">
-          <!--<div class="feature-icon">•</div>-->
-          <h3>Real Impact</h3>
-          <p>
-Focused on practical improvements that make systems easier to operate, more repeatable, and more reliable.          </p>
-          <div class="feature-list">
-            Reduced manual work<br />
-            Standardized workflows<br />
-            Improved consistency<br />
-            Practical automation
-          </div>
+      <!-- Infrastructure -->
+      <div class="feature-card">
+        <h3>Infrastructure</h3>
+        <p>
+          Built and configured Linux-based enterprise environments across middleware and systems.
+        </p>
+        <div class="feature-list">
+          Linux / Unix<br/>
+          Apache · Tomcat · JBoss · JEUS<br/>
+          Air-gapped Environment Setup<br/>
+          Installation & Troubleshooting
         </div>
       </div>
+
+      <!-- Database -->
+      <div class="feature-card">
+        <h3>Database</h3>
+        <p>
+          Supported database setup, migration, and basic data handling in enterprise systems.
+        </p>
+        <div class="feature-list">
+          MySQL · PostgreSQL · Tibero · MSSQL<br/>
+          Installation & Migration Support<br/>
+          Backup / Basic HA Concepts<br/>
+          SQL / PL-SQL
+        </div>
+      </div>
+
+      <!-- DevOps -->
+      <div class="feature-card">
+        <h3>DevOps & Automation</h3>
+        <p>
+          Built automation workflows to improve deployment consistency and reduce manual effort.
+        </p>
+        <div class="feature-list">
+          CI/CD (GitLab · GitHub Actions)<br/>
+          Docker · Kubernetes (Basic)<br/>
+          Terraform<br/>
+          Monitoring (Prometheus · Grafana)
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="feature-card">
+        <h3>Security</h3>
+        <p>
+          Integrated authentication systems and supported secure configurations.
+        </p>
+        <div class="feature-list">
+          FIDO · OTP · SSO Integration<br/>
+          Database Encryption Support<br/>
+          Access Control<br/>
+          Authentication Systems
+        </div>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+</section>
   <section class="section">
   <div class="container">
         <div class="section-title">
