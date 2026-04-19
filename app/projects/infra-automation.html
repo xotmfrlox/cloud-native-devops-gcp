@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infrastructure Automation | Seulgi Choi</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4ee;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 28px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #6c5ce7;
+    }
+
+    .project-role {
+      color: #6c5ce7;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      margin: 0;
+      font-size: 48px;
+      color: #1f1f1f;
+    }
+
+    .project-desc {
+      margin-top: 18px;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      font-size: 13px;
+      background: #fff;
+      border: 1px solid #e5e0d8;
+      border-radius: 999px;
+      padding: 7px 12px;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 22px;
+      margin-top: 28px;
+      border: 1px solid #e8e2d9;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+    }
+
+    .section { margin-top: 48px; }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .list {
+      margin-top: 16px;
+      padding-left: 20px;
+    }
+
+    .info-box {
+      margin-top: 18px;
+      background: #fff;
+      border: 1px solid #e8e2d9;
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .links a {
+      color: #6c5ce7;
+      font-weight: 700;
+      margin-right: 16px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <a href="../index.html" class="back-link">← Back to portfolio</a>
+
+  <!-- HERO -->
+  <section>
+    <div class="project-role">Linux · Shell Script · MySQL</div>
+
+    <h1 class="project-title">
+      Infrastructure Automation with Shell Scripts
+    </h1>
+
+    <p class="project-desc">
+      Automated database provisioning and secure initial configuration using shell scripts,
+      reducing manual setup time and improving deployment consistency.
+    </p>
+
+    <div class="tag-list">
+      <span class="tag">Linux</span>
+      <span class="tag">Shell Script</span>
+      <span class="tag">MySQL</span>
+      <span class="tag">Automation</span>
+    </div>
+
+    <img src="../images/projects/infra-automation.png" class="hero-image" />
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section">
+    <h2>Overview</h2>
+    <p>
+      This project focuses on automating repetitive infrastructure setup tasks,
+      especially database installation and initial security configuration.
+      Instead of manually configuring each server, the entire process is handled
+      through reusable shell scripts.
+    </p>
+  </section>
+
+  <!-- WHAT I BUILT -->
+  <section class="section">
+    <h2>What I Built</h2>
+    <ul class="list">
+      <li>Automated MySQL installation process on CentOS</li>
+      <li>Handled initial root password extraction and reset</li>
+      <li>Scripted secure setup steps (password policy, authentication)</li>
+      <li>Reduced manual configuration steps significantly</li>
+    </ul>
+  </section>
+
+  <!-- CHALLENGES -->
+  <section class="section">
+    <h2>Challenges & Solutions</h2>
+    <div class="info-box">
+      <ul class="list">
+        <li>
+          <strong>Challenge:</strong> MySQL initial password handling was inconsistent<br/>
+          <strong>Solution:</strong> Parsed logs automatically to extract and reuse temp password
+        </li>
+
+        <li>
+          <strong>Challenge:</strong> Repeated manual setup caused errors<br/>
+          <strong>Solution:</strong> Fully scripted installation + configuration flow
+        </li>
+
+        <li>
+          <strong>Challenge:</strong> Ensuring security during automation<br/>
+          <strong>Solution:</strong> Included password reset and secure setup logic in script
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="section">
+    <h2>Result</h2>
+    <p>
+      The project significantly reduced setup time and improved consistency
+      across environments. It also strengthened my understanding of Linux-based
+      automation and system-level scripting.
+    </p>
+  </section>
+
+  <!-- LINKS -->
+  <section class="section">
+    <h2>Links</h2>
+    <div class="links">
+      <a href="https://seul96.tistory.com/331" target="_blank">Blog</a>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
