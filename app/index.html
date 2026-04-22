@@ -653,7 +653,7 @@ body.fade-in {
 /* ===== BOX ===== */
 .career-box {
   width:100%;
-    max-width:1000px;   /* ✅ 추가 */
+    max-width:1200px;   /* ✅ 추가 */
   margin:0 auto;   
   height:460px;
   background:white;
@@ -1222,18 +1222,24 @@ window.addEventListener("pageshow", function () {
 <script>
 
 const data = [
+  // ===== CAREER =====
   { t:0.25, type:"career", year:"2018–2022", title:"Dream Security", sub:"Infra Engineer" },
   { t:0.65, type:"career", year:"2023", title:"RaonSecure", sub:"Infra/Security" },
   { t:0.80, type:"career", year:"2024–Now", title:"QuinLogic", sub:"Platform Engineer" },
   { t:0.97, type:"career", year:"Next", title:"Infrastructure / DevOps", sub:"Next Step", current:true },
 
+  // ===== EDUCATION =====
   { t:0.05, type:"education", year:"2015–2018", title:"University", sub:"Associate" },
   { t:0.45, type:"education", year:"2019–2020", title:"Bachelor", sub:"Degree" },
+  { t:0.72, type:"education", year:"2021–2022", title:"AI Autonomous Driving", sub:"Course" }, // ✅ 추가
 
-  { t:0.30, type:"cert", year:"2019", title:"Computer Specialist", sub:"Lv.2" },
+  // ===== CERT =====
+  { t:0.18, type:"cert", year:"2017", title:"Computer Specialist", sub:"Lv.2" },
+  { t:0.40, type:"cert", year:"2018", title:"Information Processing Engineer", sub:"" }, // ✅ 추가
   { t:0.55, type:"cert", year:"2021", title:"Driver License", sub:"" },
   { t:0.70, type:"cert", year:"2022", title:"Linux Master", sub:"Lv.2" },
-  { t:0.92, type:"cert", year:"2024", title:"German B1", sub:"" }
+  { t:0.82, type:"cert", year:"2025", title:"German A2", sub:"" }, // ✅ 추가
+  { t:0.92, type:"cert", year:"2026", title:"German B1", sub:"" }
 ];
 
 const rowY = {
