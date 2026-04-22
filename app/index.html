@@ -30,6 +30,9 @@ body.fade-in {
       color: inherit;
       text-decoration: none;
     }
+    .side-nav a.active {
+  color: #6c5ce7 !important;
+}
 
     .container {
       max-width: 1200px;
@@ -813,11 +816,61 @@ svg, #overlay {
   background: #fff;   /* 🔥 이거 핵심 */
 }
 
+.cta-item:hover {
+  transform: translateY(-3px);
+  border-color: #6c5ce7;
+  box-shadow: 0 8px 18px rgba(108, 92, 231, 0.18);
+  background: #fff;   /* 🔥 이거 핵심 */
+}
+
 .cta-item:hover img {
   filter: none;
+}
+
+.hero {
+  position: relative;
+  padding-left: 140px;
+}
+
+.side-nav {
+  position: fixed;
+  left: 30px;
+  top: 250px;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.side-nav a {
+  display: block;
+  color: #666;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.side-nav a:hover {
+  color: #6c5ce7;
+  transform: translateX(5px);
+}
+.side-nav a.active {
+  color: #6c5ce7;
+}
   </style>
 </head>
 <body>
+    <!-- 🔥 여기 -->
+  <nav class="side-nav">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
 
   <!-- ✅ header는 container 유지 -->
   <div class="container">
@@ -849,7 +902,7 @@ svg, #overlay {
   </div>
 
   <!-- ✅ hero를 container 밖으로 빼고 -->
-  <section class="section hero">
+  <section id="about" class="section hero">
     <div class="container">
 
       <div class="hero-layout">
@@ -910,7 +963,7 @@ svg, #overlay {
   </div>
    </section>
 
- <section class="section cards-section">
+ <section id="skills" class="section cards-section">
   <div class="container">
 
     <div class="section-title">
@@ -1089,7 +1142,7 @@ svg, #overlay {
   </div>
 </section>
 
-  <section class="section projects-wrap">
+  <section id="projects" class="section projects-wrap">
     <div class="container">
       <div class="projects-box">
         <div class="section-title">
@@ -1162,7 +1215,7 @@ svg, #overlay {
     </div>
   </section>
   <!-- ✅🔥 여기 아래에 CTA 섹션 추가 -->
-<section class="section cta-section">
+<section id="contact" class="section cta-section">
   <div class="container">
 
     <div class="cta-box">
@@ -1195,22 +1248,23 @@ svg, #overlay {
   </div>
 </section>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  document.body.classList.add("fade-in");
+document.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function(e) {
 
-  const links = document.querySelectorAll("a");
+    if (
+      link.hostname === window.location.hostname &&
+      !link.target &&
+      !link.getAttribute("href").startsWith("#")
+    ) {
+      e.preventDefault();
 
-  links.forEach(function(link) {
-    link.addEventListener("click", function(e) {
-      if (link.hostname === window.location.hostname && !link.target) {
-        e.preventDefault();
-        document.body.classList.remove("fade-in");
+      document.body.classList.remove("fade-in");
 
-        setTimeout(function () {
-          window.location.href = link.href;
-        }, 200);
-      }
-    });
+      setTimeout(function () {
+        window.location.href = link.href;
+      }, 200);
+    }
+
   });
 });
 
@@ -1309,6 +1363,20 @@ if (path && overlay && cards) {
   });
 }
 
+</script>
+<script>
+const sideLinks = document.querySelectorAll(".side-nav a");
+
+sideLinks.forEach(link => {
+  link.addEventListener("click", function () {
+
+    // 기존 active 제거
+    sideLinks.forEach(l => l.classList.remove("active"));
+
+    // 클릭한 애만 active 추가
+    this.classList.add("active");
+  });
+});
 </script>
 </body>
 </html>
