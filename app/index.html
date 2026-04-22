@@ -750,6 +750,69 @@ svg, #overlay {
 .label.education { top:210px; }
 .label.cert { top:340px; }
 
+/* ✅🔥 여기 아래에 CTA CSS 추가 */
+.cta-section {
+  margin-top: 60px;
+}
+
+.cta-box {
+  background: #f7f4ee;  /* 🔥 이거만 바꾸면 됨 */
+  border-radius: 28px;
+  padding: 48px 32px;
+  text-align: center;
+  border: 1px solid #e8e2d9;
+  transition: 0.3s ease;
+}
+
+.cta-box:hover {
+  border-color: #6c5ce7;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(108, 92, 231, 0.2);
+}
+
+.cta-box h2 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.cta-box p {
+  margin: 18px auto 0;
+  max-width: 600px;
+  color: #666;
+}
+
+.cta-grid {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.cta-item {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #e8e2d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+.cta-item img {
+  width: 26px;
+  filter: grayscale(100%) brightness(0.4);
+}
+
+.cta-item:hover {
+  background: #6c5ce7;
+  transform: translateY(-4px);
+}
+
+.cta-item:hover img {
+  filter: invert(1);
   </style>
 </head>
 <body>
@@ -1096,6 +1159,41 @@ svg, #overlay {
       </div>
     </div>
   </section>
+  <!-- ✅🔥 여기 아래에 CTA 섹션 추가 -->
+<section class="section cta-section">
+  <div class="container">
+
+    <div class="cta-box">
+      <h2>Let’s Work Together</h2>
+
+      <p>
+        I’m open to Infrastructure / DevOps opportunities where I can contribute
+        to building reliable and automated systems.
+      </p>
+
+      <div class="cta-grid">
+
+        <a href="mailto:sggg.choi@gmail.com" class="cta-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg">
+        </a>
+
+        <a href="https://www.linkedin.com/in/seul96" target="_blank" class="cta-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg">
+        </a>
+
+        <a href="https://github.com/xotmfrlox" target="_blank" class="cta-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg">
+        </a>
+
+        <a href="https://seul96.tistory.com/" target="_blank" class="cta-item">
+          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/blogger.svg">
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("fade-in");
