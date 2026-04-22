@@ -807,12 +807,14 @@ svg, #overlay {
 }
 
 .cta-item:hover {
-  background: #6c5ce7;
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  border-color: #6c5ce7;
+  box-shadow: 0 8px 18px rgba(108, 92, 231, 0.18);
+  background: #fff;   /* 🔥 이거 핵심 */
 }
 
 .cta-item:hover img {
-  filter: invert(1);
+  filter: none;
   </style>
 </head>
 <body>
@@ -1164,12 +1166,10 @@ svg, #overlay {
   <div class="container">
 
     <div class="cta-box">
-      <h2>Let’s Work Together</h2>
+      <h2>Let’s Talk</h2>
 
-      <p>
-        I’m open to Infrastructure / DevOps opportunities where I can contribute
-        to building reliable and automated systems.
-      </p>
+     <p>I’m open to Infrastructure / DevOps opportunities.</p>
+
 
       <div class="cta-grid">
 
