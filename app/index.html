@@ -629,11 +629,17 @@ body.fade-in {
   transition: all 0.3s ease;
 }
 
-.section .container:hover {
-   box-shadow: 
+.section {
+  margin-top: 50px;
+  transition: all 0.25s ease;
+}
+
+.section:hover .container {
+  box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.06),
-    0 4px 20px rgba(108, 92, 231, 0.12);
-  border-radius: 24px;
+    0 6px 25px rgba(108, 92, 231, 0.18);
+  border-radius: 28px;
+  border: 1px solid rgba(108, 92, 231, 0.25);
 }
 /* ===== HEADER ===== */
 .career-header {
@@ -1108,6 +1114,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
+
+/* 🔥 이거 추가 (핵심) */
+window.addEventListener("pageshow", function () {
+  document.body.classList.add("fade-in");
 });
 </script>
 <script>
