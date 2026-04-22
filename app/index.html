@@ -1113,12 +1113,12 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 
 const data = [
-  { t:0.25, type:"career", year:"2018–2022", title:"Dream Security", sub:"Infra Engineer", offsetY:-70 },
+  { t:0.25, type:"career", year:"2018–2022", title:"Dream Security", sub:"Infra Engineer" },
   { t:0.65, type:"career", year:"2023", title:"RaonSecure", sub:"Infra/Security" },
-  { t:0.85, type:"career", year:"2024–Now", title:"QuinLogic", sub:"Platform Engineer" },
-  { t:0.97, type:"career", year:"Next", title:"Infrastructure / DevOps", sub:"Next Step", current:true, offsetY:-60 },
+  { t:0.80, type:"career", year:"2024–Now", title:"QuinLogic", sub:"Platform Engineer" },
+  { t:0.97, type:"career", year:"Next", title:"Infrastructure / DevOps", sub:"Next Step", current:true },
 
-  { t:0.05, type:"education", year:"2015–2018", title:"University", sub:"Associate", offsetY:40 },
+  { t:0.05, type:"education", year:"2015–2018", title:"University", sub:"Associate" },
   { t:0.45, type:"education", year:"2019–2020", title:"Bachelor", sub:"Degree" },
 
   { t:0.30, type:"cert", year:"2019", title:"Computer Specialist", sub:"Lv.2" },
@@ -1128,19 +1128,24 @@ const data = [
 ];
 
 const rowY = {
-  career:120,
-  education:210,
-  cert:340
+  career: 120,
+  education: 210,
+  cert: 340
+};
+
+const offsetMap = {
+  career: -60,
+  education: 30,
+  cert: 0
 };
 
 const path = document.getElementById("curve");
 const overlay = document.getElementById("overlay");
 const cards = document.getElementById("cards");
 
-if(path && overlay && cards){
+if (path && overlay && cards) {
 
   const total = path.getTotalLength();
-  const box = document.querySelector(".career-box").getBoundingClientRect();
 
   data.forEach(item => {
 
@@ -1148,38 +1153,35 @@ if(path && overlay && cards){
 
     const x = p.x;
     const dotY = p.y;
-    const cardY = rowY[item.type] + (item.offsetY || 0);
+    const cardY = rowY[item.type] + (offsetMap[item.type] || 0);
 
     /* dot */
-    const dot = document.createElementNS("http://www.w3.org/2000/svg","circle");
+    const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     dot.setAttribute("cx", x);
     dot.setAttribute("cy", dotY);
-    dot.setAttribute("r", item.type==="cert"?4:6);
+    dot.setAttribute("r", item.type === "cert" ? 4 : 6);
 
     let cls = "dot " + item.type;
-    if(item.current) cls += " current";
+    if (item.current) cls += " current";
 
     dot.setAttribute("class", cls);
     overlay.appendChild(dot);
 
     /* line */
-    const line = document.createElementNS("http://www.w3.org/2000/svg","line");
+    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
     line.setAttribute("x1", x);
     line.setAttribute("y1", dotY);
     line.setAttribute("x2", x);
     line.setAttribute("y2", cardY);
-    line.setAttribute("class","dash");
+    line.setAttribute("class", "dash");
     overlay.appendChild(line);
 
     /* card */
     const card = document.createElement("div");
     card.className = "card " + item.type;
 
-    const px = (x / 1000) * box.width;
-    const py = (cardY / 400) * box.height;
-
-    card.style.left = px + "px";
-    card.style.top = py + "px";
+    card.style.left = (x / 1000) * 100 + "%";
+    card.style.top = (cardY / 400) * 100 + "%";
 
     card.innerHTML = `
       <div class="year">${item.year}</div>
