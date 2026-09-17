@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,26 +14,27 @@
       scroll-behavior: smooth;
     }
 
- body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f4ee;
-  color: #333;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f4ee;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-body.fade-in {
-  opacity: 1;
-}
+    body.fade-in {
+      opacity: 1;
+    }
 
     a {
       color: inherit;
       text-decoration: none;
     }
+
     .side-nav a.active {
-  color: #6c5ce7 !important;
-}
+      color: #6c5ce7 !important;
+    }
 
     .container {
       max-width: 1200px;
@@ -69,12 +71,12 @@ body.fade-in {
       padding: 60px 0 20px;
     }
 
-.hero-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 24px;
-  align-items: start;
-}
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: start;
+    }
 
 
     .hero-left {
@@ -94,7 +96,7 @@ body.fade-in {
       margin: 20px 0 0;
       color: #1f1f1f;
     }
-    
+
 
     .hero-desc {
       max-width: 760px;
@@ -232,29 +234,29 @@ body.fade-in {
       transition: 0.25s ease;
     }
 
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(108, 92, 231, 0.25);
-  border: 1px solid #6c5ce7;
-}
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(108, 92, 231, 0.25);
+      border: 1px solid #6c5ce7;
+    }
 
-.project-thumb {
-  height: 150px;
-  border-radius: 18px;
-  margin-bottom: 18px;
-  overflow: hidden;
-  background: #ffffff;
+    .project-thumb {
+      height: 150px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      overflow: hidden;
+      background: #ffffff;
 
-  border: 1px solid #e5e0d8;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
+      border: 1px solid #e5e0d8;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
 
-.project-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     .project-subtitle {
       font-size: 14px;
@@ -330,9 +332,10 @@ body.fade-in {
       .hero-layout {
         grid-template-columns: 1fr;
       }
+
       .hero-image {
-  height: 420px;
-}
+        height: 420px;
+      }
 
       .hero h1 {
         font-size: 52px;
@@ -370,507 +373,607 @@ body.fade-in {
       }
 
       .section-title h2,
-.contact h2 {
-  font-size: 32px;
-}
+      .contact h2 {
+        font-size: 32px;
+      }
 
       .projects-box {
         padding: 36px 20px;
       }
+
       /* 썸네일 라인 */
-.project-thumb {
-  position: relative;
-}
+      .project-thumb {
+        position: relative;
+      }
 
-.project-thumb::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: #6c5ce7;
-}
+      .project-thumb::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: #6c5ce7;
+      }
 
-/* 태그 hover */
-.tag:hover {
-  background: #6c5ce7;
-  color: white;
-  border-color: #6c5ce7;
-}
+      /* 태그 hover */
+      .tag:hover {
+        background: #6c5ce7;
+        color: white;
+        border-color: #6c5ce7;
+      }
 
-/* 제목 hover */
-.project-card h3 {
-  transition: 0.2s;
-}
+      /* 제목 hover */
+      .project-card h3 {
+        transition: 0.2s;
+      }
 
-.project-card:hover h3 {
-  color: #6c5ce7;
-}
+      .project-card:hover h3 {
+        color: #6c5ce7;
+      }
     }
+
     .more-project {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.more-project a {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  text-decoration: none;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 2px;
-  transition: 0.2s;
-}
-
-.more-project a:hover {
-  color: #6c5ce7;
-  border-color: #6c5ce7;
-}
-.contact {
-  text-align: center;
-  padding: 50px 0 60px;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 28px;
-}
-
-.contact-links a {
-  display: inline-block;
-}
-
-.contact-links img {
-  width: 22px;
-  height: 22px;
-  filter: grayscale(100%) brightness(0.4);
-  transition: 0.2s;
-}
-
-.contact-links a:hover img {
-  filter: none;
-  transform: translateY(-2px);
-}
-/* 🔥 이미지 슬라이더 */
-
-.hero-image {
-  width: 100%;
-  height: 90%;
-  align-self: center;
-  overflow: hidden;
-  border-radius: 28px;
-  border: 1px solid #e8e2d9;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-  background: #fff;
-}
-
-.image-slider {
-  display: flex;
-  width: 400%;
-  height: 100%;
-  animation: heroSlide 8s infinite;
-}
-
-.image-slider img {
-  width: 25%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* 마우스 올리면 멈춤 */
-.hero-image:hover .image-slider {
-  animation-play-state: paused;
-}
-
-/* 슬라이드 애니메이션 */
-@keyframes heroSlide {
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(0); }
-
-  25%  { transform: translateX(-25%); }
-  45%  { transform: translateX(-25%); }
-
-  50%  { transform: translateX(-50%); }
-  70%  { transform: translateX(-50%); }
-
-  75%  { transform: translateX(-75%); }
-  95%  { transform: translateX(-75%); }
-
-  100% { transform: translateX(0); }
-}
-.info-card {
-  transition: all 0.2s ease;
-}
-
-.info-card:hover {
-  border-color: #6c5ce7;
-  box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25);
-  transform: translateY(-3px);
-}
-.project-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.project-link:hover {
-  text-decoration: none;
-}
-.project-card {
-  position: relative;
-}
-
-.project-card::after {
-  content: "View Project →";
-  position: absolute;
-  bottom: 18px;
-  right: 20px;
-  font-size: 13px;
-  color: #6c5ce7;
-  opacity: 0;
-  transition: 0.2s;
-}
-
-.project-card:hover::after {
-  opacity: 1;
-}
-.work-section {
-  margin-top: 60px;
-}
-
-.timeline {
-  position: relative;
-  margin-top: 50px;
-  padding-left: 40px;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background: #f0ebe4;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 32px;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: 2px;
-  top: 8px;
-  width: 14px;
-  height: 14px;
-  background: #6c5ce7;
-  border-radius: 50%;
-}
-
-.timeline-content {
-  background: #ffffff;
-  border: 1px solid #ece6dd;
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  transition: 0.25s;
-}
-
-.timeline-content:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 36px rgba(108, 92, 231, 0.18);
-  border: 1px solid #6c5ce7;
-}
-
-.timeline-date {
-  font-size: 13px;
-  color: #6c5ce7;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.timeline-content h3 {
-  margin: 0;
-  font-size: 20px;
-  color: #222;
-}
-
-.company {
-  font-size: 13px;
-  color: #888;
-  margin-top: 4px;
-}
-
-.impact {
-  margin-top: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #333;
-}
-
-.list {
-  margin-top: 14px;
-  padding-left: 18px;
-  font-size: 14px;
-  color: #555;
-}
-
-.list li {
-  margin-bottom: 6px;
-}
-.section {
-   margin-top: 50px;
-  transition: all 0.3s ease;
-}
-.section .container {
-  padding: 40px 20px;
-  transition: all 0.3s ease;
-}
-
-.section {
-  margin-top: 50px;
-  transition: all 0.25s ease;
-}
-
-.section:not(.cta-section):hover .container {
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.06),
-    0 6px 25px rgba(108, 92, 231, 0.18);
-  border-radius: 28px;
-  border: 1px solid rgba(108, 92, 231, 0.25);
-}
-/* ===== HEADER ===== */
-.career-header {
-  font-size:13px;
-  font-weight:600;
-  color:#999;
-  margin-bottom:20px;
-  letter-spacing:0.08em;
-}
-
-/* ===== BOX ===== */
-.career-box {
-  width:100%;
-    max-width:1200px;   /* ✅ 추가 */
-  margin:0 auto;   
-  height:460px;
-  background:white;
-  border-radius:30px;
-  position:relative;
-  border:1px solid #e8e2d9;
-  box-shadow:0 10px 28px rgba(0,0,0,0.04);
-}
-
-/* ===== SVG ===== */
-svg, #overlay {
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-}
-
-/* ===== CURVE ===== */
-.path {
-  fill:none;
-  stroke:#dcd6ff;
-  stroke-width:6;
-  opacity:0.7;
-}
-
-.dash {
-  stroke:#c9c2ff;
-  stroke-width:1.5;
-  stroke-dasharray:4 6;
-  opacity:0.6;
-}
-
-/* ===== DOT ===== */
-.dot { stroke:white; stroke-width:2; }
-
-.dot.career { fill:#6c5ce7; }
-.dot.education { fill:#a29bfe; }
-.dot.cert { fill:#cfcfcf; }
-
-.dot.current {
-  fill:#ff3b3b;
-  animation:pulse 1.4s infinite;
-}
-
-@keyframes pulse {
-  0% { r:6; opacity:1; }
-  50% { r:16; opacity:0.15; }
-  100% { r:6; opacity:1; }
-}
-
-/* ===== CARD ===== */
-.card {
-  position:absolute;
-  transform:translate(-50%,-50%);
-  background:#fff;
-  padding:9px 10px;
-  border-radius:14px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.08);
-  text-align:center;
-}
-
-.card.career { width:118px; }
-.card.education { width:108px; }
-.card.cert { width:82px; }
-
-/* ===== TEXT ===== */
-.year {
-  font-size:11px;
-  color:#6c5ce7;
-  font-weight:600;
-}
-
-.title {
-  font-size:13px;
-  font-weight:600;
-  color:#222;
-}
-
-.sub {
-  font-size:11px;
-  color:#888;
-}
-
-/* ===== LABEL ===== */
-.career-box .label {
-  position:absolute;
-  left:20px;
-  font-size:12px;
-  font-weight:600;
-  color:#aaa;
-}
-
-.label.career { top:110px; }
-.label.education { top:210px; }
-.label.cert { top:340px; }
-
-/* ✅🔥 여기 아래에 CTA CSS 추가 */
-.cta-section {
-  margin-top: 60px;
-}
-
-.cta-box {
-  background: #f7f4ee;  /* 🔥 이거만 바꾸면 됨 */
-  border-radius: 28px;
-  padding: 48px 32px;
-  text-align: center;
-  border: 1px solid #e8e2d9;
-  transition: 0.3s ease;
-}
-
-.cta-box:hover {
-  border-color: #6c5ce7;
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.06),
-    0 8px 24px rgba(108, 92, 231, 0.2);
-}
-
-.cta-box h2 {
-  font-size: 40px;
-  margin: 0;
-}
-
-.cta-box p {
-  margin: 18px auto 0;
-  max-width: 600px;
-  color: #666;
-}
-
-.cta-grid {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 30px;
-}
-
-.cta-item {
-  width: 64px;
-  height: 64px;
-  border-radius: 18px;
-  background: #fff;
-  border: 1px solid #e8e2d9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.25s;
-}
-
-.cta-item img {
-  width: 26px;
-  filter: grayscale(100%) brightness(0.4);
-}
-
-.cta-item:hover {
-  transform: translateY(-3px);
-  border-color: #6c5ce7;
-  box-shadow: 0 8px 18px rgba(108, 92, 231, 0.18);
-  background: #fff;   /* 🔥 이거 핵심 */
-}
-
-.cta-item:hover {
-  transform: translateY(-3px);
-  border-color: #6c5ce7;
-  box-shadow: 0 8px 18px rgba(108, 92, 231, 0.18);
-  background: #fff;   /* 🔥 이거 핵심 */
-}
-
-.cta-item:hover img {
-  filter: none;
-}
-
-.hero {
-  position: relative;
-  padding-left: 140px;
-}
-
-.side-nav {
-  position: fixed;
-  left: 30px;
-  top: 250px;
-  z-index: 9999;
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.side-nav a {
-  display: block;
-  color: #666;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.side-nav a:hover {
-  color: #6c5ce7;
-  transform: translateX(5px);
-}
-.side-nav a.active {
-  color: #6c5ce7;
-}
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .more-project a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 2px;
+      transition: 0.2s;
+    }
+
+    .more-project a:hover {
+      color: #6c5ce7;
+      border-color: #6c5ce7;
+    }
+
+    .contact {
+      text-align: center;
+      padding: 50px 0 60px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .contact-links a {
+      display: inline-block;
+    }
+
+    .contact-links img {
+      width: 22px;
+      height: 22px;
+      filter: grayscale(100%) brightness(0.4);
+      transition: 0.2s;
+    }
+
+    .contact-links a:hover img {
+      filter: none;
+      transform: translateY(-2px);
+    }
+
+    .cv-icon {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #222;
+      color: white;
+
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 3px;
+
+      transition: 0.2s;
+    }
+
+    .contact-links a:hover .cv-icon {
+      background: #6c5ce7;
+      transform: translateY(-2px);
+    }
+
+    /* 🔥 이미지 슬라이더 */
+
+    .hero-image {
+      width: 100%;
+      height: 90%;
+      align-self: center;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid #e8e2d9;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      background: #fff;
+    }
+
+    .image-slider {
+      display: flex;
+      width: 400%;
+      height: 100%;
+      animation: heroSlide 8s infinite;
+    }
+
+    .image-slider img {
+      width: 25%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 마우스 올리면 멈춤 */
+    .hero-image:hover .image-slider {
+      animation-play-state: paused;
+    }
+
+    /* 슬라이드 애니메이션 */
+    @keyframes heroSlide {
+      0% {
+        transform: translateX(0);
+      }
+
+      20% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-25%);
+      }
+
+      45% {
+        transform: translateX(-25%);
+      }
+
+      50% {
+        transform: translateX(-50%);
+      }
+
+      70% {
+        transform: translateX(-50%);
+      }
+
+      75% {
+        transform: translateX(-75%);
+      }
+
+      95% {
+        transform: translateX(-75%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .info-card {
+      transition: all 0.2s ease;
+    }
+
+    .info-card:hover {
+      border-color: #6c5ce7;
+      box-shadow: 0 10px 25px rgba(108, 92, 231, 0.25);
+      transform: translateY(-3px);
+    }
+
+    .project-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .project-link:hover {
+      text-decoration: none;
+    }
+
+    .project-card {
+      position: relative;
+    }
+
+    .project-card::after {
+      content: "View Project →";
+      position: absolute;
+      bottom: 18px;
+      right: 20px;
+      font-size: 13px;
+      color: #6c5ce7;
+      opacity: 0;
+      transition: 0.2s;
+    }
+
+    .project-card:hover::after {
+      opacity: 1;
+    }
+
+    .work-section {
+      margin-top: 60px;
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 50px;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: #f0ebe4;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 2px;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      background: #6c5ce7;
+      border-radius: 50%;
+    }
+
+    .timeline-content {
+      background: #ffffff;
+      border: 1px solid #ece6dd;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transition: 0.25s;
+    }
+
+    .timeline-content:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(108, 92, 231, 0.18);
+      border: 1px solid #6c5ce7;
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      color: #6c5ce7;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .timeline-content h3 {
+      margin: 0;
+      font-size: 20px;
+      color: #222;
+    }
+
+    .company {
+      font-size: 13px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    .impact {
+      margin-top: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .list {
+      margin-top: 14px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .list li {
+      margin-bottom: 6px;
+    }
+
+    .section {
+      margin-top: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .section .container {
+      padding: 40px 20px;
+      transition: all 0.3s ease;
+    }
+
+    .section {
+      margin-top: 50px;
+      transition: all 0.25s ease;
+    }
+
+    .section:not(.cta-section):hover .container {
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.06),
+        0 6px 25px rgba(108, 92, 231, 0.18);
+      border-radius: 28px;
+      border: 1px solid rgba(108, 92, 231, 0.25);
+    }
+
+    /* ===== HEADER ===== */
+    .career-header {
+      font-size: 13px;
+      font-weight: 600;
+      color: #999;
+      margin-bottom: 20px;
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== BOX ===== */
+    .career-box {
+      width: 100%;
+      max-width: 1200px;
+      /* ✅ 추가 */
+      margin: 0 auto;
+      height: 460px;
+      background: white;
+      border-radius: 30px;
+      position: relative;
+      border: 1px solid #e8e2d9;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ===== SVG ===== */
+    svg,
+    #overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ===== CURVE ===== */
+    .path {
+      fill: none;
+      stroke: #dcd6ff;
+      stroke-width: 6;
+      opacity: 0.7;
+    }
+
+    .dash {
+      stroke: #c9c2ff;
+      stroke-width: 1.5;
+      stroke-dasharray: 4 6;
+      opacity: 0.6;
+    }
+
+    /* ===== DOT ===== */
+    .dot {
+      stroke: white;
+      stroke-width: 2;
+    }
+
+    .dot.career {
+      fill: #6c5ce7;
+    }
+
+    .dot.education {
+      fill: #a29bfe;
+    }
+
+    .dot.cert {
+      fill: #cfcfcf;
+    }
+
+    .dot.current {
+      fill: #ff3b3b;
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        r: 6;
+        opacity: 1;
+      }
+
+      50% {
+        r: 16;
+        opacity: 0.15;
+      }
+
+      100% {
+        r: 6;
+        opacity: 1;
+      }
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 9px 10px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    .card.career {
+      width: 118px;
+    }
+
+    .card.education {
+      width: 108px;
+    }
+
+    .card.cert {
+      width: 82px;
+    }
+
+    /* ===== TEXT ===== */
+    .year {
+      font-size: 11px;
+      color: #6c5ce7;
+      font-weight: 600;
+    }
+
+    .title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .sub {
+      font-size: 11px;
+      color: #888;
+    }
+
+    /* ===== LABEL ===== */
+    .career-box .label {
+      position: absolute;
+      left: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #aaa;
+    }
+
+    .label.career {
+      top: 110px;
+    }
+
+    .label.education {
+      top: 210px;
+    }
+
+    .label.cert {
+      top: 340px;
+    }
+
+    /* ✅🔥 여기 아래에 CTA CSS 추가 */
+    .cta-section {
+      margin-top: 60px;
+    }
+
+    .cta-box {
+      background: #f7f4ee;
+      /* 🔥 이거만 바꾸면 됨 */
+      border-radius: 28px;
+      padding: 48px 32px;
+      text-align: center;
+      border: 1px solid #e8e2d9;
+      transition: 0.3s ease;
+    }
+
+    .cta-box:hover {
+      border-color: #6c5ce7;
+      box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.06),
+        0 8px 24px rgba(108, 92, 231, 0.2);
+    }
+
+    .cta-box h2 {
+      font-size: 40px;
+      margin: 0;
+    }
+
+    .cta-box p {
+      margin: 18px auto 0;
+      max-width: 600px;
+      color: #666;
+    }
+
+    .cta-grid {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .cta-item {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid #e8e2d9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.25s;
+    }
+
+    .cta-item img {
+      width: 26px;
+      filter: grayscale(100%) brightness(0.4);
+    }
+
+    .cta-item:hover {
+      transform: translateY(-3px);
+      border-color: #6c5ce7;
+      box-shadow: 0 8px 18px rgba(108, 92, 231, 0.18);
+      background: #fff;
+      /* 🔥 이거 핵심 */
+    }
+
+    .cta-item:hover {
+      transform: translateY(-3px);
+      border-color: #6c5ce7;
+      box-shadow: 0 8px 18px rgba(108, 92, 231, 0.18);
+      background: #fff;
+      /* 🔥 이거 핵심 */
+    }
+
+    .cta-item:hover img {
+      filter: none;
+    }
+
+    .hero {
+      position: relative;
+      padding-left: 140px;
+    }
+
+    .side-nav {
+      position: fixed;
+      left: 30px;
+      top: 250px;
+      z-index: 9999;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .side-nav a {
+      display: block;
+      color: #666;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .side-nav a:hover {
+      color: #6c5ce7;
+      transform: translateX(5px);
+    }
+
+    .side-nav a.active {
+      color: #6c5ce7;
+    }
   </style>
 </head>
+
 <body>
-    <!-- 🔥 여기 -->
+  <!-- 🔥 여기 -->
   <nav class="side-nav">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
-  
+
 
   <!-- ✅ header는 container 유지 -->
   <div class="container">
@@ -886,6 +989,10 @@ svg, #overlay {
 
         <a href="https://github.com/xotmfrlox" target="_blank">
           <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg">
+        </a>
+
+        <a href="../docs/Seulgi_Choi_Resume_Infra.pdf" target="_blank" title="View CV">
+          <span class="cv-icon">CV</span>
         </a>
 
         <a href="https://seul96.tistory.com/" target="_blank">
@@ -911,237 +1018,241 @@ svg, #overlay {
           <p class="hero-role">Infrastructure / DevOps Engineer</p>
           <h1>Seulgi Choi</h1>
           <p class="hero-desc">
-            I turn complex infrastructure into simple, automated systems, with hands-on experience in enterprise environments and a strong focus on reliability, communication, and continuous learning.
+            I turn complex infrastructure into simple, automated systems, with hands-on experience in enterprise
+            environments and a strong focus on reliability, communication, and continuous learning.
           </p>
 
-<div class="info-grid">
-  <div class="info-card">
-    <div class="label">Experience</div>
-    <div class="value">6+ years<br/>
-  Enterprise Systems</div>
-  </div>
+          <div class="info-grid">
+            <div class="info-card">
+              <div class="label">Experience</div>
+              <div class="value">6+ years<br />
+                Enterprise Systems</div>
+            </div>
 
-  <div class="info-card">
-    <div class="label">Location</div>
-    <div class="value">Aachen, Germany <br />(Open to Relocation)</div>
-  </div>
+            <div class="info-card">
+              <div class="label">Location</div>
+              <div class="value">Aachen, Germany <br />(Open to Relocation)</div>
+            </div>
 
-  <div class="info-card">
-    <div class="label">Education</div>
-    <div class="value">B.Sc. Information & Communication Engineering</div>
-  </div>
+            <div class="info-card">
+              <div class="label">Education</div>
+              <div class="value">B.Sc. Information & Communication Engineering</div>
+            </div>
 
-  <div class="info-card">
-    <div class="label">Work Authorization</div>
-    <div class="value">German Permanent Residency <br />(No Sponsorship Required)</div>
-  </div>
+            <div class="info-card">
+              <div class="label">Work Authorization</div>
+              <div class="value">German Permanent Residency <br />(No Sponsorship Required)</div>
+            </div>
 
-  <div class="info-card">
-    <div class="label">Languages</div>
-    <div class="value">English (B2) · German (B1) · <br/>
-      Korean (Native)</div>
-  </div>
+            <div class="info-card">
+              <div class="label">Languages</div>
+              <div class="value">English (B2) · German (B1) · <br />
+                Korean (Native)</div>
+            </div>
 
-  <div class="info-card">
-    <div class="label">Availability</div>
-    <div class="value">Available to start immediately <br/>
+            <div class="info-card">
+              <div class="label">Availability</div>
+              <div class="value">Available to start immediately <br />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-slider">
+            <img src="images/Foto_Seulgi.png" />
+            <img src="images/profile1.jpg" />
+            <img src="images/profile2.jpg" />
+            <img src="images/profile3.jpg" />
+            <img src="images/profile4.jpeg" />
+
+          </div>
+
+        </div>
+
+      </div>
+  </section>
+
+  <section id="skills" class="section cards-section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Core Skills</h2>
+        <p>Technologies and areas I work with in infrastructure and DevOps</p>
+      </div>
+
+      <div class="cards-grid">
+
+
+        <!-- Infrastructure -->
+        <div class="feature-card">
+          <h3>Infrastructure</h3>
+          <p>
+            Built and configured Linux-based enterprise environments across middleware and systems.
+          </p>
+          <div class="feature-list">
+            Linux / Unix<br />
+            Apache · Tomcat · JBoss · JEUS<br />
+            Air-gapped Environment Setup<br />
+            Installation & Troubleshooting
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="feature-card">
+          <h3>Database</h3>
+          <p>
+            Supported database setup, migration, and basic data handling in enterprise systems.
+          </p>
+          <div class="feature-list">
+            MySQL · PostgreSQL · Tibero · MSSQL<br />
+            Installation & Migration Support<br />
+            Backup / Basic HA Concepts<br />
+            SQL / PL-SQL
+          </div>
+        </div>
+
+        <!-- DevOps -->
+        <div class="feature-card">
+          <h3>DevOps & Automation</h3>
+          <p>
+            Built automation workflows to improve deployment consistency and reduce manual effort.
+          </p>
+          <div class="feature-list">
+            CI/CD (GitLab · GitHub Actions)<br />
+            Docker · Kubernetes (Basic)<br />
+            Terraform<br />
+            Monitoring (Prometheus · Grafana)
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div class="feature-card">
+          <h3>Security</h3>
+          <p>
+            Integrated authentication systems and supported secure configurations.
+          </p>
+          <div class="feature-list">
+            FIDO · OTP · SSO Integration<br />
+            Database Encryption Support<br />
+            Access Control<br />
+            Authentication Systems
+          </div>
+        </div>
+
+      </div>
+
     </div>
-  </div>
-</div>
-</div>
-<div class="hero-image">
-  <div class="image-slider">
-    <img src="images/Foto_Seulgi.png" />
-    <img src="images/profile1.jpg" />
-    <img src="images/profile2.jpg" />
-    <img src="images/profile3.jpg" />
-    <img src="images/profile4.jpeg" />
-    
-  </div>
-
-      </div>
-   
-  </div>
-   </section>
-
- <section id="skills" class="section cards-section">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Core Skills</h2>
-      <p>Technologies and areas I work with in infrastructure and DevOps</p>
-    </div>
-
-    <div class="cards-grid">
-      
-
-      <!-- Infrastructure -->
-      <div class="feature-card">
-        <h3>Infrastructure</h3>
-        <p>
-          Built and configured Linux-based enterprise environments across middleware and systems.
-        </p>
-        <div class="feature-list">
-          Linux / Unix<br/>
-          Apache · Tomcat · JBoss · JEUS<br/>
-          Air-gapped Environment Setup<br/>
-          Installation & Troubleshooting
-        </div>
-      </div>
-
-      <!-- Database -->
-      <div class="feature-card">
-        <h3>Database</h3>
-        <p>
-          Supported database setup, migration, and basic data handling in enterprise systems.
-        </p>
-        <div class="feature-list">
-          MySQL · PostgreSQL · Tibero · MSSQL<br/>
-          Installation & Migration Support<br/>
-          Backup / Basic HA Concepts<br/>
-          SQL / PL-SQL
-        </div>
-      </div>
-
-      <!-- DevOps -->
-      <div class="feature-card">
-        <h3>DevOps & Automation</h3>
-        <p>
-          Built automation workflows to improve deployment consistency and reduce manual effort.
-        </p>
-        <div class="feature-list">
-          CI/CD (GitLab · GitHub Actions)<br/>
-          Docker · Kubernetes (Basic)<br/>
-          Terraform<br/>
-          Monitoring (Prometheus · Grafana)
-        </div>
-      </div>
-
-      <!-- Security -->
-      <div class="feature-card">
-        <h3>Security</h3>
-        <p>
-          Integrated authentication systems and supported secure configurations.
-        </p>
-        <div class="feature-list">
-          FIDO · OTP · SSO Integration<br/>
-          Database Encryption Support<br/>
-          Access Control<br/>
-          Authentication Systems
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+  </section>
   <section class="section">
-  <div class="container">
-        <div class="section-title">
-      <h2>Career Journey</h2>
-      <p>A quick overview of my career path and progression</p>
-    </div>
+    <div class="container">
+      <div class="section-title">
+        <h2>Career Journey</h2>
+        <p>A quick overview of my career path and progression</p>
+      </div>
 
-    <div class="career-box">
+      <div class="career-box">
 
-      <div class="label career">Work</div>
-      <div class="label education">Education</div>
-      <div class="label cert">Cert</div>
+        <div class="label career">Work</div>
+        <div class="label education">Education</div>
+        <div class="label cert">Cert</div>
 
-      <svg viewBox="0 0 1000 400">
-        <path id="curve" class="path"
-          d="M 50 200 
+        <svg viewBox="0 0 1000 400">
+          <path id="curve" class="path" d="M 50 200 
              C 200 80, 350 80, 500 200
-             C 650 320, 800 320, 950 150"/>
-      </svg>
+             C 650 320, 800 320, 950 150" />
+        </svg>
 
-      <svg id="overlay" viewBox="0 0 1000 400"></svg>
-      <div id="cards"></div>
+        <svg id="overlay" viewBox="0 0 1000 400"></svg>
+        <div id="cards"></div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
   <section class="section work-section">
-  <div class="container">
-    <div class="section-title">
-      <h2>Work Experience</h2>
-      <p>From enterprise infrastructure to DevOps automation, focused on reliability, security, and scalable systems.</p>
+    <div class="container">
+      <div class="section-title">
+        <h2>Work Experience</h2>
+        <p>From enterprise infrastructure to DevOps automation, focused on reliability, security, and scalable systems.
+        </p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- QuinLogic -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <div class="timeline-date">Apr 2024 – 2024</div>
+
+            <h3>Software Engineer (Infrastructure / Platform)</h3>
+            <div class="company">QuinLogic GmbH · Aachen, Germany</div>
+
+            <p class="impact">
+              Reduced manual deployment effort and improved system reliability by automating release workflows and
+              integrating secure authentication systems.
+            </p>
+
+            <ul class="list">
+              <li>Automated deployment workflows using Windows-based batch scripting</li>
+              <li>Implemented OAuth2 authentication and integrated Keycloak in container-based environments</li>
+              <li>Built automation for database data generation from Excel/CSV pipelines</li>
+              <li>Resolved application-level issues in C# environments with dev team collaboration</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RaonSecure -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <div class="timeline-date">Mar 2023 – Mar 2024</div>
+
+            <h3>Infrastructure / DevOps Engineer</h3>
+            <div class="company">RaonSecure · Seoul, South Korea</div>
+
+            <p class="impact">
+              Stabilized enterprise environments across 15+ projects by integrating authentication systems and
+              standardizing infrastructure operations.
+            </p>
+
+            <ul class="list">
+              <li>Integrated FIDO and OTP authentication into enterprise systems</li>
+              <li>Supported database and middleware (WAS) environments across multiple clients</li>
+              <li>Executed disaster recovery (DR) tests and maintained Linux servers</li>
+              <li>Standardized test environments to reduce repetitive operational workload</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Dream Security -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-content">
+            <div class="timeline-date">Oct 2018 – Apr 2022</div>
+
+            <h3>Infrastructure Engineer</h3>
+            <div class="company">Dream Security · Seoul, South Korea</div>
+
+            <p class="impact">
+              Built and operated secure infrastructure in enterprise and air-gapped environments, reducing deployment
+              time by 70% through automation.
+            </p>
+
+            <ul class="list">
+              <li>Operated Linux-based infrastructure (OS, WEB/WAS, DB, SSL)</li>
+              <li>Automated provisioning using shell scripts (≈70% faster setup)</li>
+              <li>Performed DB migration, encryption, and HA operations</li>
+              <li>Delivered security-critical systems (FIDO, encryption) under strict deadlines</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
     </div>
-
-    <div class="timeline">
-
-      <!-- QuinLogic -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-
-        <div class="timeline-content">
-          <div class="timeline-date">Apr 2024 – 2024</div>
-
-          <h3>Software Engineer (Infrastructure / Platform)</h3>
-          <div class="company">QuinLogic GmbH · Aachen, Germany</div>
-
-          <p class="impact">
-            Reduced manual deployment effort and improved system reliability by automating release workflows and integrating secure authentication systems.
-          </p>
-
-          <ul class="list">
-            <li>Automated deployment workflows using Windows-based batch scripting</li>
-            <li>Implemented OAuth2 authentication and integrated Keycloak in container-based environments</li>
-            <li>Built automation for database data generation from Excel/CSV pipelines</li>
-            <li>Resolved application-level issues in C# environments with dev team collaboration</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- RaonSecure -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-
-        <div class="timeline-content">
-          <div class="timeline-date">Mar 2023 – Mar 2024</div>
-
-          <h3>Infrastructure / DevOps Engineer</h3>
-          <div class="company">RaonSecure · Seoul, South Korea</div>
-
-          <p class="impact">
-            Stabilized enterprise environments across 15+ projects by integrating authentication systems and standardizing infrastructure operations.
-          </p>
-
-          <ul class="list">
-            <li>Integrated FIDO and OTP authentication into enterprise systems</li>
-            <li>Supported database and middleware (WAS) environments across multiple clients</li>
-            <li>Executed disaster recovery (DR) tests and maintained Linux servers</li>
-            <li>Standardized test environments to reduce repetitive operational workload</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Dream Security -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-
-        <div class="timeline-content">
-          <div class="timeline-date">Oct 2018 – Apr 2022</div>
-
-          <h3>Infrastructure Engineer</h3>
-          <div class="company">Dream Security · Seoul, South Korea</div>
-
-          <p class="impact">
-            Built and operated secure infrastructure in enterprise and air-gapped environments, reducing deployment time by 70% through automation.
-          </p>
-
-          <ul class="list">
-            <li>Operated Linux-based infrastructure (OS, WEB/WAS, DB, SSL)</li>
-            <li>Automated provisioning using shell scripts (≈70% faster setup)</li>
-            <li>Performed DB migration, encryption, and HA operations</li>
-            <li>Delivered security-critical systems (FIDO, encryption) under strict deadlines</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
   <section id="projects" class="section projects-wrap">
     <div class="container">
@@ -1152,242 +1263,248 @@ svg, #overlay {
             A few projects that reflect both my infrastructure background and my growing DevOps experience.
           </p>
         </div>
-        
+
 
         <div class="projects-grid">
-<a href="projects/devops-pipeline.html" class="project-link">
-  <div class="project-card">
-    <div class="project-thumb">
-      <img src="images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" />
-    </div>
-    <div class="project-subtitle">Kubernetes · Terraform · GitHub Actions</div>
-    <h3>Cloud Native DevOps Pipeline</h3>
-    <p>
-      Built an end-to-end deployment workflow from source code to Kubernetes, including infrastructure provisioning, CI/CD, monitoring, and health checks.
-    </p>
-    <div class="tags">
-      <span class="tag">CI/CD</span>
-      <span class="tag">Docker</span>
-      <span class="tag">Kubernetes</span>
-    </div>
-  </div>
-</a>
-<a href="projects/air-gapped.html" class="project-link">
-          <div class="project-card">
-            <div class="project-thumb">
-            <!-- <img src="/app/images/projects/air-gapped.png" alt="Cloud Native DevOps Pipeline" /></div> -->
-            <img src="images/projects/air-gapped.png" alt="Cloud Native DevOps Pipeline" /></div>
-            <div class="project-subtitle">Air-Gapped Environment</div>
-            <h3>Secure Offline Infrastructure</h3>
-            <p>
-              Designed and operated a secure web infrastructure in a private network with Apache, Tomcat, MySQL, internal package management, and controlled access.
-            </p>
-            <div class="tags">
-              <span class="tag">Linux</span>
-              <span class="tag">Security</span>
-              <span class="tag">Infra</span>
+          <a href="projects/devops-pipeline.html" class="project-link">
+            <div class="project-card">
+              <div class="project-thumb">
+                <img src="images/projects/devops-pipeline.png" alt="Cloud Native DevOps Pipeline" />
+              </div>
+              <div class="project-subtitle">Kubernetes · Terraform · GitHub Actions</div>
+              <h3>Cloud Native DevOps Pipeline</h3>
+              <p>
+                Built an end-to-end deployment workflow from source code to Kubernetes, including infrastructure
+                provisioning, CI/CD, monitoring, and health checks.
+              </p>
+              <div class="tags">
+                <span class="tag">CI/CD</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Kubernetes</span>
+              </div>
             </div>
-          </div>
-</a>
-<a href="projects/aws-data.html" class="project-link">
-          <div class="project-card">
-            <div class="project-thumb">
-            <!-- <img src="/app/images/projects/aws-data.png" alt="Cloud Native DevOps Pipeline" /></div> -->
-            <img src="images/projects/aws-data.png" alt="Cloud Native DevOps Pipeline" /></div>
-            <div class="project-subtitle">Hadoop · Hive · Spark</div>
-            <h3>AWS Data Processing</h3>
-            <p>
-              Built a distributed data processing environment on AWS EC2 to understand cluster configuration, metadata integration, and interactive workflows.
-            </p>
-            <div class="tags">
-              <span class="tag">AWS</span>
-              <span class="tag">Big Data</span>
-              <span class="tag">Linux</span>
+          </a>
+          <a href="projects/air-gapped.html" class="project-link">
+            <div class="project-card">
+              <div class="project-thumb">
+                <!-- <img src="/app/images/projects/air-gapped.png" alt="Cloud Native DevOps Pipeline" /></div> -->
+                <img src="images/projects/air-gapped.png" alt="Cloud Native DevOps Pipeline" />
+              </div>
+              <div class="project-subtitle">Air-Gapped Environment</div>
+              <h3>Secure Offline Infrastructure</h3>
+              <p>
+                Designed and operated a secure web infrastructure in a private network with Apache, Tomcat, MySQL,
+                internal package management, and controlled access.
+              </p>
+              <div class="tags">
+                <span class="tag">Linux</span>
+                <span class="tag">Security</span>
+                <span class="tag">Infra</span>
+              </div>
             </div>
-          </div>
+          </a>
+          <a href="projects/aws-data.html" class="project-link">
+            <div class="project-card">
+              <div class="project-thumb">
+                <!-- <img src="/app/images/projects/aws-data.png" alt="Cloud Native DevOps Pipeline" /></div> -->
+                <img src="images/projects/aws-data.png" alt="Cloud Native DevOps Pipeline" />
+              </div>
+              <div class="project-subtitle">Hadoop · Hive · Spark</div>
+              <h3>AWS Data Processing</h3>
+              <p>
+                Built a distributed data processing environment on AWS EC2 to understand cluster configuration, metadata
+                integration, and interactive workflows.
+              </p>
+              <div class="tags">
+                <span class="tag">AWS</span>
+                <span class="tag">Big Data</span>
+                <span class="tag">Linux</span>
+              </div>
+            </div>
           </a>
         </div>
         <div class="more-project">
-  <a href="projects/more-projects.html">
-    MORE PROJECT
-  </a>
-</div>
+          <a href="projects/more-projects.html">
+            MORE PROJECT
+          </a>
+        </div>
       </div>
     </div>
   </section>
   <!-- ✅🔥 여기 아래에 CTA 섹션 추가 -->
-<section id="contact" class="section cta-section">
-  <div class="container">
+  <section id="contact" class="section cta-section">
+    <div class="container">
 
-    <div class="cta-box">
-      <h2>Let’s Talk</h2>
+      <div class="cta-box">
+        <h2>Let’s Talk</h2>
 
-     <p>I’m open to Infrastructure / DevOps opportunities.</p>
+        <p>I’m open to Infrastructure / DevOps opportunities.</p>
 
 
-      <div class="cta-grid">
+        <div class="cta-grid">
 
-        <a href="mailto:sggg.choi@gmail.com" class="cta-item">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg">
-        </a>
+          <a href="mailto:sggg.choi@gmail.com" class="cta-item">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg">
+          </a>
 
-        <a href="https://www.linkedin.com/in/seul96" target="_blank" class="cta-item">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg">
-        </a>
+          <a href="https://www.linkedin.com/in/seul96" target="_blank" class="cta-item">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg">
+          </a>
 
-        <a href="https://github.com/xotmfrlox" target="_blank" class="cta-item">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg">
-        </a>
+          <a href="https://github.com/xotmfrlox" target="_blank" class="cta-item">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg">
+          </a>
 
-        <a href="https://seul96.tistory.com/" target="_blank" class="cta-item">
-          <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/blogger.svg">
-        </a>
+          <a href="https://seul96.tistory.com/" target="_blank" class="cta-item">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/blogger.svg">
+          </a>
 
+        </div>
       </div>
+
     </div>
+  </section>
+  <script>
+    document.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function (e) {
 
-  </div>
-</section>
-<script>
-document.querySelectorAll("a").forEach(function(link) {
-  link.addEventListener("click", function(e) {
+        if (
+          link.hostname === window.location.hostname &&
+          !link.target &&
+          !link.getAttribute("href").startsWith("#")
+        ) {
+          e.preventDefault();
 
-    if (
-      link.hostname === window.location.hostname &&
-      !link.target &&
-      !link.getAttribute("href").startsWith("#")
-    ) {
-      e.preventDefault();
+          document.body.classList.remove("fade-in");
 
-      document.body.classList.remove("fade-in");
+          setTimeout(function () {
+            window.location.href = link.href;
+          }, 200);
+        }
 
-      setTimeout(function () {
-        window.location.href = link.href;
-      }, 200);
-    }
+      });
+    });
 
-  });
-});
+    /* 🔥 이거 추가 (핵심) */
+    window.addEventListener("pageshow", function () {
+      document.body.classList.add("fade-in");
+    });
+  </script>
+  <script>
 
-/* 🔥 이거 추가 (핵심) */
-window.addEventListener("pageshow", function () {
-  document.body.classList.add("fade-in");
-});
-</script>
-<script>
+    const data = [
+      // ===== CAREER =====
+      { t: 0.20, type: "career", year: "2018–2022", title: "Dream Security", sub: "Infra Engineer" },
+      { t: 0.64, type: "career", year: "2023", title: "RaonSecure", sub: "Infra/Security" },
+      { t: 0.74, type: "career", year: "2024–2026", title: "QuinLogic", sub: "Platform Engineer" },
+      { t: 0.97, type: "career", year: "Next", title: "Infrastructure / DevOps", sub: "Next Step", current: true },
 
-const data = [
-  // ===== CAREER =====
-  { t:0.20, type:"career", year:"2018–2022", title:"Dream Security", sub:"Infra Engineer" },
-  { t:0.64, type:"career", year:"2023", title:"RaonSecure", sub:"Infra/Security" },
-  { t:0.74, type:"career", year:"2024–2026", title:"QuinLogic", sub:"Platform Engineer" },
-  { t:0.97, type:"career", year:"Next", title:"Infrastructure / DevOps", sub:"Next Step", current:true },
+      // ===== EDUCATION =====
+      { t: 0.07, type: "education", year: "2015–2018", title: "University", sub: "Associate" },
+      { t: 0.35, type: "education", year: "2019–2020", title: "Bachelor", sub: "Degree" },
+      { t: 0.55, type: "education", year: "2021–2022", title: "AI Autonomous Driving", sub: "Course" }, // ✅ 추가
 
-  // ===== EDUCATION =====
-  { t:0.07, type:"education", year:"2015–2018", title:"University", sub:"Associate" },
-  { t:0.35, type:"education", year:"2019–2020", title:"Bachelor", sub:"Degree" },
-  { t:0.55, type:"education", year:"2021–2022", title:"AI Autonomous Driving", sub:"Course" }, // ✅ 추가
+      // ===== CERT =====
+      /*{ t:0.18, type:"cert", year:"2017", title:"Computer Specialist", sub:"Lv.2" },
+      { t:0.40, type:"cert", year:"2018", title:"Information Processing Engineer", sub:"" }, // ✅ 추가
+      { t:0.55, type:"cert", year:"2021", title:"Driver License", sub:"" },
+      { t:0.70, type:"cert", year:"2022", title:"Linux Master", sub:"Lv.2" },
+      { t:0.80, type:"cert", year:"2025", title:"German A2", sub:"" }, // ✅ 추가
+      { t:0.92, type:"cert", year:"2026", title:"German B1", sub:"" },
+      { t:0.96, type:"cert", year:"2026", title:"German B2 Beruf", sub:"In Progress" }*/
 
-  // ===== CERT =====
-  /*{ t:0.18, type:"cert", year:"2017", title:"Computer Specialist", sub:"Lv.2" },
-  { t:0.40, type:"cert", year:"2018", title:"Information Processing Engineer", sub:"" }, // ✅ 추가
-  { t:0.55, type:"cert", year:"2021", title:"Driver License", sub:"" },
-  { t:0.70, type:"cert", year:"2022", title:"Linux Master", sub:"Lv.2" },
-  { t:0.80, type:"cert", year:"2025", title:"German A2", sub:"" }, // ✅ 추가
-  { t:0.92, type:"cert", year:"2026", title:"German B1", sub:"" },
-  { t:0.96, type:"cert", year:"2026", title:"German B2 Beruf", sub:"In Progress" }*/
+      // ===== CERT =====
+      { t: 0.13, type: "cert", year: "2017", title: "Computer Specialist", sub: "Lv.2" },
+      { t: 0.28, type: "cert", year: "2018", title: "Information Processing Engineer", sub: "" }, // ✅ 추가
+      { t: 0.45, type: "cert", year: "2021", title: "Driver License", sub: "" },
+      { t: 0.62, type: "cert", year: "2022", title: "Linux Master", sub: "Lv.2" },
+      { t: 0.76, type: "cert", year: "2025", title: "German A2", sub: "" }, // ✅ 추가
+      { t: 0.83, type: "cert", year: "2026", title: "German B1", sub: "" },
+      { t: 0.92, type: "cert", year: "2026", title: "German B2", sub: "In Progress" }
+    ];
 
-  // ===== CERT =====
-  { t:0.13, type:"cert", year:"2017", title:"Computer Specialist", sub:"Lv.2" },
-  { t:0.28, type:"cert", year:"2018", title:"Information Processing Engineer", sub:"" }, // ✅ 추가
-  { t:0.45, type:"cert", year:"2021", title:"Driver License", sub:"" },
-  { t:0.62, type:"cert", year:"2022", title:"Linux Master", sub:"Lv.2" },
-  { t:0.76, type:"cert", year:"2025", title:"German A2", sub:"" }, // ✅ 추가
-  { t:0.83, type:"cert", year:"2026", title:"German B1", sub:"" },
-  { t:0.92, type:"cert", year:"2026", title:"German B2", sub:"In Progress" }
-];
+    const rowY = {
+      career: 120,
+      education: 210,
+      cert: 340
+    };
 
-const rowY = {
-  career: 120,
-  education: 210,
-  cert: 340
-};
+    const offsetMap = {
+      career: -60,
+      education: 30,
+      cert: 0
+    };
 
-const offsetMap = {
-  career: -60,
-  education: 30,
-  cert: 0
-};
+    const path = document.getElementById("curve");
+    const overlay = document.getElementById("overlay");
+    const cards = document.getElementById("cards");
 
-const path = document.getElementById("curve");
-const overlay = document.getElementById("overlay");
-const cards = document.getElementById("cards");
+    if (path && overlay && cards) {
 
-if (path && overlay && cards) {
+      const total = path.getTotalLength();
 
-  const total = path.getTotalLength();
+      data.forEach(item => {
 
-  data.forEach(item => {
+        const p = path.getPointAtLength(total * item.t);
 
-    const p = path.getPointAtLength(total * item.t);
+        const x = p.x;
+        const dotY = p.y;
+        const cardY = rowY[item.type] + (offsetMap[item.type] || 0);
 
-    const x = p.x;
-    const dotY = p.y;
-    const cardY = rowY[item.type] + (offsetMap[item.type] || 0);
+        /* dot */
+        const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        dot.setAttribute("cx", x);
+        dot.setAttribute("cy", dotY);
+        dot.setAttribute("r", item.type === "cert" ? 4 : 6);
 
-    /* dot */
-    const dot = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-    dot.setAttribute("cx", x);
-    dot.setAttribute("cy", dotY);
-    dot.setAttribute("r", item.type === "cert" ? 4 : 6);
+        let cls = "dot " + item.type;
+        if (item.current) cls += " current";
 
-    let cls = "dot " + item.type;
-    if (item.current) cls += " current";
+        dot.setAttribute("class", cls);
+        overlay.appendChild(dot);
 
-    dot.setAttribute("class", cls);
-    overlay.appendChild(dot);
+        /* line */
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", x);
+        line.setAttribute("y1", dotY);
+        line.setAttribute("x2", x);
+        line.setAttribute("y2", cardY);
+        line.setAttribute("class", "dash");
+        overlay.appendChild(line);
 
-    /* line */
-    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-    line.setAttribute("x1", x);
-    line.setAttribute("y1", dotY);
-    line.setAttribute("x2", x);
-    line.setAttribute("y2", cardY);
-    line.setAttribute("class", "dash");
-    overlay.appendChild(line);
+        /* card */
+        const card = document.createElement("div");
+        card.className = "card " + item.type;
 
-    /* card */
-    const card = document.createElement("div");
-    card.className = "card " + item.type;
+        card.style.left = (x / 1000) * 100 + "%";
+        card.style.top = (cardY / 400) * 100 + "%";
 
-    card.style.left = (x / 1000) * 100 + "%";
-    card.style.top = (cardY / 400) * 100 + "%";
-
-    card.innerHTML = `
+        card.innerHTML = `
       <div class="year">${item.year}</div>
       <div class="title">${item.title}</div>
       <div class="sub">${item.sub}</div>
     `;
 
-    cards.appendChild(card);
+        cards.appendChild(card);
 
-  });
-}
+      });
+    }
 
-</script>
-<script>
-const sideLinks = document.querySelectorAll(".side-nav a");
+  </script>
+  <script>
+    const sideLinks = document.querySelectorAll(".side-nav a");
 
-sideLinks.forEach(link => {
-  link.addEventListener("click", function () {
+    sideLinks.forEach(link => {
+      link.addEventListener("click", function () {
 
-    // 기존 active 제거
-    sideLinks.forEach(l => l.classList.remove("active"));
+        // 기존 active 제거
+        sideLinks.forEach(l => l.classList.remove("active"));
 
-    // 클릭한 애만 active 추가
-    this.classList.add("active");
-  });
-});
-</script>
+        // 클릭한 애만 active 추가
+        this.classList.add("active");
+      });
+    });
+  </script>
 </body>
+
 </html>
